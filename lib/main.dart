@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 
+
+//// ==================================================================
 // //First project Bottom Navigation Bar design
 //
 // import 'first.dart';
@@ -8,6 +10,7 @@ import 'package:flutter/material.dart';
 //   runApp(HomePage());
 // }
 
+// ====================================================================
 // // Second Project Update App Bar Using Provider for favorite fruit
 // import 'second.dart';
 // import 'package:provider/provider.dart';
@@ -19,6 +22,7 @@ import 'package:flutter/material.dart';
 
 // // Third Project for the UI of the login application and the problem
 // // is that we are having issue with the background image
+// =====================================================================
 // import 'Fourth Project/scn/navbar.dart';
 // import 'Third Project/UI/signUp.dart';
 //
@@ -35,6 +39,7 @@ import 'package:flutter/material.dart';
 // }
 
 // // navigation basic very first
+// ========================================================================
 // void main()=> runApp(MyApp());
 // class MyApp extends StatelessWidget{
 //   @override
@@ -48,7 +53,7 @@ import 'package:flutter/material.dart';
 //
 
 // /// Fifth Project on Neumoprism
-
+// ========================================================================
 // import 'Fifth Project/Neumorphism_Button.dart';
 // void main() => runApp(MyApp());
 //
@@ -65,14 +70,56 @@ import 'package:flutter/material.dart';
 //   }
 // }
 
-// Todlist SixthPg for
-import 'Todlist SixthPg/todolist.dart';
-void main() => runApp(Todlist());
-class Todlist extends StatelessWidget {
+// =======================================================================
+// // To do list SixthPg for
+// import 'Todo List Sixth Project/pages/todolist.dart';
+//
+// void main() => runApp(MyApp());
+//
+// class MyApp extends StatelessWidget{
+//   @override
+//   Widget build(BuildContext context){
+//     return MaterialApp(
+//       theme: ThemeData(
+//         primarySwatch: Colors.deepPurple,
+//         primaryColor: Colors.deepPurple,
+//         textTheme: const TextTheme(
+//           caption: TextStyle(
+//             color: Colors.white,
+//             fontSize: 20,
+//             fontWeight: FontWeight.w600,
+//           ),
+//           subtitle1: TextStyle(
+//             color: Colors.white,
+//             fontSize: 20,
+//             fontWeight: FontWeight.w600,
+//           ),
+//         ),
+//       ),
+//       home: const todoList()
+//     );
+//   }
+// }
+//
+
+// ========================================================================
+
+// Login Screen with user Name and password
+import 'package:eng/Seventh/screen/loginScreen.dart';
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget{
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context){
     return MaterialApp(
-        home: todoList(),
+      title: 'Login Screen',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.lightBlue,
+        fontFamily: 'Nunito',
+      ),
+      home: loginScreen(),
     );
   }
 }
+
