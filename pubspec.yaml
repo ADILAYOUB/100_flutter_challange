@@ -36,8 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.2
  # for project Second Project This dependency
   provider: ^6.0.2
- # Fourth Project flutter_Neumorphic:
-
+  math_expressions: ^2.3.0
 
 dev_dependencies:
   flutter_test:

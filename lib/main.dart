@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 
 
+
+
 //// ==================================================================
 // //First project Bottom Navigation Bar design
 //
@@ -100,26 +102,39 @@ import 'package:flutter/material.dart';
 //     );
 //   }
 // }
+
+
+// ========================================================================
 //
+// //Login Screen
+// import 'Login_Screen_Seventh_Project/login_screen.dart';
+//
+// void main() => runApp(MyAppLogin());
+//
+// class MyAppLogin extends StatelessWidget{
+//
+//   @override
+//   Widget build(BuildContext context){
+//    return MaterialApp(
+//      home: LoginDemo(),
+//    );
+//   }
+// }
+
+
 
 // ========================================================================
 
-// Login Screen with user Name and password
-import 'package:eng/Seventh/screen/loginScreen.dart';
+import 'Calculator_Eighth/screen/calculator.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return MaterialApp(
-      title: 'Login Screen',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.lightBlue,
-        fontFamily: 'Nunito',
-      ),
-      home: loginScreen(),
+      title: 'calculator ',
+      home: CalScreen(),
     );
   }
 }
-
