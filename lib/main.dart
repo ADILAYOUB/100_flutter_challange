@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 
 
 
-
-
 //// ==================================================================
 // //First project Bottom Navigation Bar design
 //
@@ -124,17 +122,44 @@ import 'package:flutter/material.dart';
 
 
 // ========================================================================
+//
+// import 'Calculator_Eighth/screen/calculator.dart';
+//
+// void main() => runApp(MyApp());
+//
+// class MyApp extends StatelessWidget{
+//   @override
+//   Widget build(BuildContext context){
+//     return MaterialApp(
+//       title: 'calculator ',
+//       home: CalScreen(),
+//     );
+//   }
+// }
 
-import 'Calculator_Eighth/screen/calculator.dart';
+
+
+// ========================================================================
+// Building tic tack to game using android studio
+// concept required
+/*
+* 1. showing widgets on the screen
+* 2. gridview.builder
+* 3. Function writing
+* 4. Gesture detection
+* 5. Loops
+* */
+
+import 'Tic_Tac_Toe Nineth/home_Screen.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget{
   @override
   Widget build(BuildContext context){
-    return MaterialApp(
-      title: 'calculator ',
-      home: CalScreen(),
+    return const MaterialApp(
+      title: 'tic tack toe',
+      home: ticScreen(),
     );
   }
-}
+  }

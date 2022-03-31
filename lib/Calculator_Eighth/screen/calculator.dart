@@ -30,33 +30,33 @@ class _CalScreenState extends State<CalScreen> {
       body: Column(
         children: <Widget>[
           Expanded(
-              child: Container(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: <Widget>[
-                    Container(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  Expanded(
+                    child: Container(
                       padding: const EdgeInsets.all(20.0),
                       alignment: Alignment.centerRight,
                       child: Text(
                         userInput,
-                        style: const TextStyle(fontSize: 18,color: Colors.white),
+                        style: const TextStyle(fontSize: 30,color: Colors.white),
                       ),
                     ),
+                  ),
 
-                    Container(
-                      padding:const EdgeInsets.all(15),
-                      alignment: Alignment.centerRight,
-                      child: Text(
-                        outPut,
-                        style: const TextStyle(fontSize: 30, color: Colors.white,fontWeight: FontWeight.bold),
-                      ),
+                  Container(
+                    padding:const EdgeInsets.all(30),
+                    alignment: Alignment.centerRight,
+                    child: Text(
+                      outPut,
+                      style: const TextStyle(fontSize: 30, color: Colors.white,fontWeight: FontWeight.bold),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
           ),
           Expanded(
-              flex: 3,
+              flex: 2,
               child: Container(
                 child: GridView.builder(
                     itemCount: buttons.length,
