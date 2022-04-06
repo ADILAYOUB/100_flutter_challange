@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 import 'constants.dart';
+
 class ticScreen extends StatefulWidget {
   const ticScreen({Key? key}) : super(key: key);
 
@@ -12,50 +12,52 @@ class _ticScreenState extends State<ticScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.indigo[900],
+      backgroundColor: const Color.fromARGB(255, 109, 112, 144),
       body: Column(
         children: <Widget>[
           Expanded(
-            child: Container(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.all(30.0),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                       const Text(
-                          'Player X',
-                          style: TextStyle(fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white),
-                        ),
-                        Text(
-                          xScore.toString(),
-                          style:const TextStyle(fontSize: 20,color: Colors.white),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(30.0),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        const Text('Player O', style: TextStyle(fontSize: 20,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.all(30.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      const Text(
+                        'Player X',
+                        style: TextStyle(
+                            fontSize: 20,
                             fontWeight: FontWeight.bold,
-                            color: Colors.white)
-                        ),
-                        Text(
-                          oScore.toString(),
-                          style: const TextStyle(fontSize: 20,color: Colors.white),
-                        ),
-                      ],
-                    ),
+                            color: Colors.white),
+                      ),
+                      Text(
+                        xScore.toString(),
+                        style:
+                            const TextStyle(fontSize: 20, color: Colors.white),
+                      ),
+                    ],
                   ),
-                ],
-              ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(30.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      const Text('Player O',
+                          style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white)),
+                      Text(
+                        oScore.toString(),
+                        style:
+                            const TextStyle(fontSize: 20, color: Colors.white),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
           ),
           Expanded(
@@ -75,7 +77,8 @@ class _ticScreenState extends State<ticScreen> {
                       child: Center(
                         child: Text(
                           displayElements[index],
-                          style: const TextStyle(color: Colors.white, fontSize: 35),
+                          style: const TextStyle(
+                              color: Colors.white, fontSize: 35),
                         ),
                       ),
                     ),
@@ -84,16 +87,18 @@ class _ticScreenState extends State<ticScreen> {
           ),
           Expanded(
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  RaisedButton(
-                    color: Colors.indigo[50],
-                    textColor: Colors.black,
-                    onPressed: _clearScoreBoard,
-                    child: Text("Clear Score Board"),
-                  ),
-                ],
-              ))
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              ElevatedButton(
+                style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateProperty.all<Color>(Colors.green),
+                ),
+                onPressed: _clearScoreBoard,
+                child: const Text("Clear Score Board"),
+              ),
+            ],
+          ))
         ],
       ),
     );
@@ -115,7 +120,6 @@ class _ticScreenState extends State<ticScreen> {
   }
 
   void _checkWinner() {
-
     // Checking rows
     if (displayElements[0] == displayElements[1] &&
         displayElements[0] == displayElements[2] &&
@@ -173,8 +177,8 @@ class _ticScreenState extends State<ticScreen> {
           return AlertDialog(
             title: Text("\" " + winner + " \" is Winner!!!"),
             actions: [
-              FlatButton(
-                child: Text("Play Again"),
+              TextButton(
+                child: const Text("Play Again"),
                 onPressed: () {
                   _clearBoard();
                   Navigator.of(context).pop();
@@ -197,10 +201,10 @@ class _ticScreenState extends State<ticScreen> {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-            title: Text("Draw"),
+            title: const Text("Draw"),
             actions: [
-              FlatButton(
-                child: Text("Play Again"),
+              TextButton(
+                child: const Text("Play Again"),
                 onPressed: () {
                   _clearBoard();
                   Navigator.of(context).pop();
