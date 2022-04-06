@@ -1,3 +1,6 @@
+// ignore_for_file: prefer_const_constructors
+
+import 'package:eng/10_WallPaper_Project/view/home/home.dart';
 import 'package:flutter/material.dart';
 
 //// ==================================================================
@@ -143,16 +146,27 @@ import 'package:flutter/material.dart';
 * 5. Loops
 * */
 
-import 'Tic_Tac_Toe Nineth/home_Screen.dart';
+// ========================================================================
+// import 'Tic_Tac_Toe Nineth/home_Screen.dart';
 
-void main() => runApp(MyApp());
+// void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'tic tack toe',
-      home: ticScreen(),
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return const MaterialApp(
+//       title: 'tic tack toe',
+//       home: ticScreen(),
+//     );
+//   }
+// }
+
+// ========================================================================
+// Wallpaper
+
+void main() => runApp(
+      MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: HomeWallpaper(),
+      ),
     );
-  }
-}
