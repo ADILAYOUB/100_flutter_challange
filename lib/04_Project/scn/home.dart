@@ -10,10 +10,11 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("HOME"),
+        title: const Text("HOME"),
       ),
-
-      body: Center(child: Text("HOME"),),
+      body: const Center(
+        child: const Text("HOME"),
+      ),
     );
   }
 }

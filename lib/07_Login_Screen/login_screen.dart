@@ -1,4 +1,3 @@
-import 'package:eng/main.dart';
 import 'package:flutter/material.dart';
 
 class LoginDemo extends StatefulWidget {
@@ -12,30 +11,30 @@ class _LoginDemoState extends State<LoginDemo> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text("Login Page"),
+        title: const Text("Login Page"),
       ),
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.fromLTRB(0,60.0,0,20),
-             child: Card(
-               elevation: 4.0,
-               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(400)),
-               clipBehavior: Clip.antiAlias,
-               child: Stack(
-                 children: <Widget>[
-                   const Center(child: CircularProgressIndicator()),
-                   Center(
-                     child: FadeInImage.assetNetwork(
-                       placeholder: 'assets/loading.gif',
-                       image: 'https://picsum.photos/250?image=9',
-                     ),
-                   ),
-                 ],
-               ),
-             ),
-
+              padding: const EdgeInsets.fromLTRB(0, 60.0, 0, 20),
+              child: Card(
+                elevation: 4.0,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(400)),
+                clipBehavior: Clip.antiAlias,
+                child: Stack(
+                  children: <Widget>[
+                    const Center(child: CircularProgressIndicator()),
+                    Center(
+                      child: FadeInImage.assetNetwork(
+                        placeholder: 'assets/loading.gif',
+                        image: 'https://picsum.photos/250?image=9',
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
             const Padding(
               //padding: const EdgeInsets.only(left:15.0,right: 15.0,top:0,bottom: 0),
@@ -48,8 +47,8 @@ class _LoginDemoState extends State<LoginDemo> {
               ),
             ),
             const Padding(
-              padding: EdgeInsets.only(
-                  left: 15.0, right: 15.0, top: 15, bottom: 0),
+              padding:
+                  EdgeInsets.only(left: 15.0, right: 15.0, top: 15, bottom: 0),
               //padding: EdgeInsets.symmetric(horizontal: 15),
               child: TextField(
                 obscureText: true,

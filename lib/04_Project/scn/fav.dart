@@ -10,10 +10,11 @@ class _FavState extends State<Fav> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Favorites"),
+        title: const Text("Favorites"),
       ),
-
-      body: Center(child: Text("Favorites"),),
+      body: const Center(
+        child: Text("Favorites"),
+      ),
     );
   }
 }

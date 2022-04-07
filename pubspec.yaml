@@ -16,6 +16,15 @@ dependencies:
   cupertino_icons: ^1.0.2
  # for project Second Project This dependency
   provider: ^6.0.2
+    # http for the wallpaper 
+    # getX for the Wallpaper
+  http: ^0.13.4
+  get: ^4.6.1
+  flutter_cache_manager: ^3.3.0
+  hive: ^2.1.0
+  hive_flutter: ^1.1.0
+
+
   
 
 dev_dependencies:

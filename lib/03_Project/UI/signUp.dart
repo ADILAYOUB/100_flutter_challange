@@ -1,25 +1,24 @@
-import 'package:flutter/material.dart';
-
+// ignore: file_names
 import '../header.dart';
 
+import 'package:flutter/material.dart';
 
 class SignupPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: ListView(
-          children: <Widget>[
-            Container(
-              color: Colors.indigo[100],
-              child: Column(
-                children: [Signup()],
-              ),
-            ),
-          ],
-        ));
+      children: <Widget>[
+        Container(
+          color: Colors.indigo[100],
+          child: Column(
+            children: [Signup()],
+          ),
+        ),
+      ],
+    ));
   }
 }
-
 
 class Signup extends StatelessWidget {
   @override
@@ -42,8 +41,8 @@ class SignupCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      constraints: const BoxConstraints(maxWidth: 320,maxHeight: 400),
-      decoration:const BoxDecoration(
+      constraints: const BoxConstraints(maxWidth: 320, maxHeight: 400),
+      decoration: const BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(16.0)),
           color: Colors.white),
       padding: const EdgeInsets.fromLTRB(0.0, 32.0, 0.0, 0.0),
@@ -98,7 +97,7 @@ class SignupCard extends StatelessWidget {
               )),
           const Padding(
               padding: EdgeInsets.fromLTRB(32.0, 0.0, 32.0, 2.0),
-              child:  TextField(
+              child: TextField(
                 autofocus: true,
                 keyboardType: TextInputType.emailAddress,
                 autocorrect: false,
@@ -111,12 +110,12 @@ class SignupCard extends StatelessWidget {
                 style: TextStyle(color: Colors.black87),
               )),
           Padding(
-              padding:const EdgeInsets.fromLTRB(0.0, 32.0, 0.0, 0.0),
+              padding: const EdgeInsets.fromLTRB(0.0, 32.0, 0.0, 0.0),
               child: ButtonTheme(
                 minWidth: 320,
                 child: MaterialButton(
                     shape: const RoundedRectangleBorder(
-                      borderRadius:  BorderRadius.only(
+                      borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(16.0),
                           bottomRight: Radius.circular(16.0)),
                     ),
@@ -130,7 +129,8 @@ class SignupCard extends StatelessWidget {
                     onPressed: () {
                       Null enabled;
                     },
-                    child: const Text("GET OTP", style: TextStyle(fontSize: 14.0))),
+                    child: const Text("GET OTP",
+                        style: TextStyle(fontSize: 14.0))),
               )),
         ],
       ),

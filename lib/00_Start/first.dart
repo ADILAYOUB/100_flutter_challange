@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -9,13 +7,9 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-
-
-
 class _HomePageState extends State<HomePage> {
   int _currentIndex = 1;
   final List<Widget> _pages = <Widget>[];
-
 
   @override
   void initState() {
@@ -37,14 +31,14 @@ class _HomePageState extends State<HomePage> {
           backgroundColor: Colors.tealAccent[300],
           centerTitle: true,
           shape: const ContinuousRectangleBorder(
-            borderRadius:  BorderRadius.only(
+            borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(60.0),
               bottomRight: Radius.circular(60.0),
             ),
           ),
         ),
         body: _pages[_currentIndex],
-        bottomNavigationBar:  BottomAppBar(
+        bottomNavigationBar: BottomAppBar(
           //this causes the effect of Notch
           shape: const CircularNotchedRectangle(),
           notchMargin: 8.0,
@@ -62,24 +56,28 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-          child: BottomNavigationBar(
+              child: BottomNavigationBar(
                 currentIndex: _currentIndex,
                 backgroundColor: Colors.blue,
                 selectedItemColor: Colors.white,
-                onTap: (index){
+                onTap: (index) {
                   setState(() {
                     _currentIndex = index;
                   });
-                }, items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.category), label: 'Category'),
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
-            BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Settings'),
-          ],),
+                },
+                items: const [
+                  BottomNavigationBarItem(
+                      icon: Icon(Icons.category), label: 'Category'),
+                  BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
+                  BottomNavigationBarItem(
+                      icon: Icon(Icons.settings), label: 'Settings'),
+                ],
+              ),
             ),
           ),
         ),
         floatingActionButtonLocation:
-        FloatingActionButtonLocation.miniCenterDocked,
+            FloatingActionButtonLocation.miniCenterDocked,
         floatingActionButton: Padding(
           padding: const EdgeInsets.all(8.0),
           child: FloatingActionButton(
@@ -94,7 +92,6 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
 
 //These will become different pages but for this example i am making these as Stateless Widget for the sake of this example
 
@@ -126,7 +123,6 @@ class SettingScreen extends StatelessWidget {
   }
 }
 
-
 // Page Third will be Category Screen on the Click effect
 
 class CategoryScreen extends StatelessWidget {
@@ -137,6 +133,7 @@ class CategoryScreen extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: double.infinity,
-      child: const Center(child: Text('Category Screen')),);
+      child: const Center(child: Text('Category Screen')),
+    );
   }
 }

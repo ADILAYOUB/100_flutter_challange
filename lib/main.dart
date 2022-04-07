@@ -1,8 +1,5 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:eng/10_WallPaper_Project/view/home/home.dart';
-import 'package:flutter/material.dart';
-
 //// ==================================================================
 // //First project Bottom Navigation Bar design
 //
@@ -164,9 +161,31 @@ import 'package:flutter/material.dart';
 // ========================================================================
 // Wallpaper
 
-void main() => runApp(
-      MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: HomeWallpaper(),
+import 'package:eng/10_WallPaper_Project/view/home.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+
+import '10_WallPaper_Project/utils/constants/const.dart';
+
+Future<void> main() async {
+  await Hive.initFlutter();
+  Hive.openBox<String>(downloadBox);
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GetMaterialApp(
+      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
       ),
+      home: const HomeWallpaper(),
     );
+  }
+}
