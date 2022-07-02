@@ -40,6 +40,14 @@ class _HomePageState extends State<HomePage> {
     'Jackson',
     'Aiden'
   ];
+  List<String> locations = [
+    'Betaab Valley Lush Green Meadow',
+    'Sonamarg Meadow of Gold',
+    'Shalimar Bagh Mughal Garden',
+    'Nishat Bagh Garden of Joy',
+    'Dachigam National Park',
+    'Amarnath Cave Shrine'
+  ];
 
   List<String> subtitle = [
     "Unleash your hair's true potential!",
@@ -55,44 +63,52 @@ class _HomePageState extends State<HomePage> {
       child: Scaffold(
         backgroundColor: Colors.black,
         body: Padding(
-          padding: const EdgeInsets.all(18.0),
+          padding: EdgeInsets.all(MediaQuery.of(context).size.width * 0.018),
           child: Column(
             children: [
               Stack(
                 children: [
                   Positioned(
-                    top: 8.0,
-                    left: 8.0,
+                    top: MediaQuery.of(context).size.height * 0.02,
+                    left: MediaQuery.of(context).size.height * 0.02,
                     child: ClipRRect(
-                      borderRadius: BorderRadius.circular(20),
+                      borderRadius: BorderRadius.circular(
+                          MediaQuery.of(context).size.width * 0.2),
                       child: Image.network(
                         imageUrl.profilePic,
-                        scale: 8,
+                        scale: MediaQuery.of(context).size.width * 0.014,
                       ),
                     ),
                   ),
-                  const Positioned(
-                    top: 8.0,
-                    left: 60.0,
+                  Positioned(
+                    top: MediaQuery.of(context).size.height * 0.03,
+                    left: MediaQuery.of(context).size.height * 0.07,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           "Adil Ayoub",
-                          style: TextStyle(fontSize: 16, color: Colors.white),
+                          style: TextStyle(
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.03,
+                              color: Colors.white),
                         ),
                         Row(
                           children: [
                             Icon(
                               Icons.location_on_outlined,
-                              size: 16,
+                              size: MediaQuery.of(context).size.width * 0.03,
                               color: Colors.white,
                             ),
-                            SizedBox(width: 4),
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width * 0.004,
+                            ),
                             Text(
                               "Gadi Seer",
-                              style:
-                                  TextStyle(fontSize: 14, color: Colors.white),
+                              style: TextStyle(
+                                  fontSize:
+                                      MediaQuery.of(context).size.width * 0.02,
+                                  color: Colors.white),
                             ),
                           ],
                         ),
@@ -102,7 +118,10 @@ class _HomePageState extends State<HomePage> {
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 98.0),
+                      padding: EdgeInsets.only(
+                        top: MediaQuery.of(context).size.height * 0.08,
+                        bottom: MediaQuery.of(context).size.height * 0.02,
+                      ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: List.generate(serviceType.length, (index) {
@@ -113,25 +132,32 @@ class _HomePageState extends State<HomePage> {
                               });
                             },
                             child: Container(
-                              width: 90,
-                              height: 50,
+                              width: MediaQuery.of(context).size.width * 0.26,
+                              height: MediaQuery.of(context).size.width * 0.15,
                               decoration: BoxDecoration(
                                 border: Border.all(color: Colors.white),
                                 color: isSelected == index
                                     ? const Color(0xFF1EFFAE)
                                     : Colors.transparent,
-                                borderRadius: BorderRadius.circular(18),
+                                borderRadius: BorderRadius.circular(
+                                  MediaQuery.of(context).size.width * 0.08,
+                                ),
                               ),
-                              margin:
-                                  const EdgeInsets.symmetric(horizontal: 12),
+                              margin: EdgeInsets.symmetric(
+                                horizontal:
+                                    MediaQuery.of(context).size.width * 0.016,
+                              ),
                               child: Center(
                                 child: Text(
                                   serviceType[index],
                                   style: TextStyle(
-                                      color: isSelected == index
-                                          ? Colors.black
-                                          : Colors.white,
-                                      fontSize: 16),
+                                    color: isSelected == index
+                                        ? Colors.black
+                                        : Colors.white,
+                                    fontSize:
+                                        MediaQuery.of(context).size.width *
+                                            0.05,
+                                  ),
                                 ),
                               ),
                             ),
@@ -146,62 +172,106 @@ class _HomePageState extends State<HomePage> {
                 child: ListView.builder(
                   itemCount: imageUrls.length,
                   itemBuilder: (context, index) {
-                    return Stack(children: [
-                      GestureDetector(
-                        onTap: () {
-                          String selectedImage = imageUrls[index];
-                          String selectedName = names[index];
-                          String selectedSubtitle = subtitle[index];
+                    return Stack(
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            String selectedImage = imageUrls[index];
+                            String selectedName = names[index];
+                            String selectedSubtitle = subtitle[index];
 
-                          Navigator.push(
+                            Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailScreen(
-                                      imageUrl: selectedImage,
-                                      name: selectedName,
-                                      subtitle: selectedSubtitle)));
-                        },
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(12),
+                                builder: (context) => DetailScreen(
+                                  imageUrl: selectedImage,
+                                  name: selectedName,
+                                  subtitle: selectedSubtitle,
+                                ),
+                              ),
+                            );
+                          },
                           child: Padding(
-                            padding: const EdgeInsets.only(bottom: 8.0),
-                            child: Image.network(
-                              imageUrls[index],
+                            padding: EdgeInsets.only(
+                              bottom: MediaQuery.of(context).size.width * 0.02,
+                            ),
+                            child: SizedBox(
+                              height: MediaQuery.of(context).size.height * 0.40,
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(12),
+                                child: AspectRatio(
+                                  aspectRatio:
+                                      MediaQuery.of(context).size.width *
+                                          25 /
+                                          (MediaQuery.of(context).size.width *
+                                              0.75),
+                                  child: Image.network(
+                                    imageUrls[index],
+                                    fit: BoxFit.fitWidth,
+                                  ),
+                                ),
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                      Positioned(
-                          top: 8.0,
-                          left: 8.0,
+                        Positioned(
+                          top: MediaQuery.of(context).size.height * 0.02,
+                          left: MediaQuery.of(context).size.width * 0.04,
                           child: CircleAvatar(
-                            radius: 30,
+                            radius: MediaQuery.of(context).size.width * 0.09,
                             backgroundImage: NetworkImage(avatars[index]),
-                          )),
-                      Positioned(
-                        top: 18.0,
-                        left: 80.0,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              names[index],
-                              style: const TextStyle(
+                          ),
+                        ),
+                        Positioned(
+                          top: MediaQuery.of(context).size.height * 0.04,
+                          left: MediaQuery.of(context).size.width * 0.25,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                names[index],
+                                style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                            Text(
-                              subtitle[index],
-                              style: const TextStyle(
-                                fontSize: 12,
+                                  fontSize:
+                                      MediaQuery.of(context).size.width * 0.05,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Text(
+                                subtitle[index],
+                                style: TextStyle(
+                                  fontSize:
+                                      MediaQuery.of(context).size.width * 0.03,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Positioned(
+                          top: MediaQuery.of(context).size.height * 0.36,
+                          left: MediaQuery.of(context).size.width * 0.04,
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Icon(
+                                Icons.location_on_outlined,
+                                size: MediaQuery.of(context).size.width * 0.04,
                                 color: Colors.white,
                               ),
-                            ),
-                          ],
+                              Text(
+                                locations[index],
+                                style: TextStyle(
+                                  fontSize:
+                                      MediaQuery.of(context).size.width * 0.036,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
-                    ]);
+                      ],
+                    );
                   },
                 ),
               ),

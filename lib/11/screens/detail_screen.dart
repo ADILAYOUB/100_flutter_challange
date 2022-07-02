@@ -34,28 +34,33 @@ class DetailScreen extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  width: 40,
-                  height: 40,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(36),
-                    color: Colors.black87,
-                  ),
-                  child: IconButton(
-                    icon: const Icon(
-                      Icons.arrow_back_ios_new,
-                      size: 16,
-                      color: Colors.white,
-                    ),
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                  ),
-                )
-              ],
+            child: SafeArea(
+              child: Padding(
+                padding: const EdgeInsets.all(16),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      width: 40,
+                      height: 40,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(36),
+                        color: Colors.black87,
+                      ),
+                      child: IconButton(
+                        icon: const Icon(
+                          Icons.arrow_back_ios_new,
+                          size: 16,
+                          color: Colors.white,
+                        ),
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                      ),
+                    )
+                  ],
+                ),
+              ),
             ),
           ),
         ),
@@ -67,7 +72,7 @@ class DetailScreen extends StatelessWidget {
           child: Container(color: Colors.black),
         ),
         Positioned(
-          top: 280.0,
+          top: 400.0,
           left: 40.0,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -83,7 +88,7 @@ class DetailScreen extends StatelessWidget {
                         fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(
-                    width: 300,
+                    width: 200,
                   ),
                   Container(
                     width: 50,
@@ -99,14 +104,14 @@ class DetailScreen extends StatelessWidget {
                       children: [
                         Icon(
                           Icons.star,
-                          size: 12,
+                          size: 14,
                           color: Color(0xFF1EFFAE),
                         ),
                         Text(
                           '4.3',
                           style: TextStyle(
                               color: Colors.white,
-                              fontSize: 12,
+                              fontSize: 14,
                               fontWeight: FontWeight.bold),
                         ),
                       ],
@@ -124,7 +129,7 @@ class DetailScreen extends StatelessWidget {
                   Text(
                     subtitle,
                     style: const TextStyle(
-                      fontSize: 24,
+                      fontSize: 20,
                       color: Colors.white,
                     ),
                   ),
@@ -134,7 +139,7 @@ class DetailScreen extends StatelessWidget {
           ),
         ),
         const Positioned.fill(
-          top: 350,
+          top: 530,
           child: Column(
             children: [
               Padding(
@@ -165,13 +170,13 @@ class DetailScreen extends StatelessWidget {
           ),
         ),
         const Positioned.fill(
-          top: 530,
+          top: 730,
           child: BabarHairCutWidget(),
         ),
         Positioned.fill(
             left: 50,
             right: 50,
-            top: 600,
+            top: 850,
             bottom: 10,
             child: Center(
               child: ClipRRect(
@@ -180,11 +185,8 @@ class DetailScreen extends StatelessWidget {
                   onPressed: () {},
                   style: ButtonStyle(
                     minimumSize: MaterialStateProperty.all<Size>(
-                      const Size(800,
-                          800), // Increase the width and height values as per your requirement
-                    ),
-                    maximumSize: MaterialStateProperty.all<Size>(
-                      const Size(800, 800.0),
+                      const Size(80,
+                          80), // Increase the width and height values as per your requirement
                     ),
                     shape: MaterialStateProperty.all<OutlinedBorder>(
                       RoundedRectangleBorder(
@@ -201,7 +203,7 @@ class DetailScreen extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const BookNow()));
+                              builder: (context) => const BookingPage()));
                     },
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -229,15 +231,15 @@ class DetailScreen extends StatelessWidget {
                               size: 16,
                               color: Colors.grey.shade400,
                             ),
-                            const Icon(
+                            Icon(
                               Icons.arrow_forward_ios_rounded,
                               size: 16,
-                              color: Colors.black38,
+                              color: Colors.grey.shade200,
                             ),
                             const Icon(
                               Icons.arrow_forward_ios_rounded,
                               size: 16,
-                              color: Colors.black,
+                              color: Colors.white,
                             ),
                           ],
                         ),
