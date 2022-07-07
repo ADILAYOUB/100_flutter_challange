@@ -1,12 +1,31 @@
 import 'package:flutte_challange/11/constants/string/image_url.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  ImageUrl imageUrl = ImageUrl();
+  List<bool> isSelected = List.generate(10, (index) => false);
+  List<String> serviceType = [
+    'Hair',
+    'Beard',
+    'Shampoo',
+    'Masaj',
+    'Waxing',
+    'Facial',
+    'Manicure',
+    'Pedicure',
+    'Massage',
+    'Trimming',
+  ];
+
+  @override
   Widget build(BuildContext context) {
-    ImageUrl imageUrl = ImageUrl();
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.black,
@@ -52,19 +71,41 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 72.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: List.generate(6, (index) {
-                    return GestureDetector(
-                      onTap: () {},
-                      child: Container(
-                        color: Colors.red,
-                        child: const Text('Adil Ayoub'),
-                      ),
-                    );
-                  }),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 72.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: List.generate(6, (index) {
+                      return GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            isSelected[index] = !isSelected[index];
+                          });
+                        },
+                        child: Container(
+                          width: 80,
+                          height: 40,
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Colors.white),
+                            color: isSelected[index]
+                                ? const Color(0xFF1EFFAE)
+                                : Colors.transparent,
+                            borderRadius: BorderRadius.circular(18),
+                          ),
+                          margin: const EdgeInsets.symmetric(horizontal: 8),
+                          child: Center(
+                            child: Text(
+                              serviceType[index],
+                              style: const TextStyle(
+                                  color: Colors.white, fontSize: 16),
+                            ),
+                          ),
+                        ),
+                      );
+                    }),
+                  ),
                 ),
               ),
             ],
