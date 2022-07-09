@@ -1,6 +1,7 @@
 import 'package:flutte_challange/11/constants/string/image_url.dart';
 import 'package:flutter/material.dart';
 
+import '../constants/list_services.dart';
 import 'scroll_event.dart';
 
 class HomePage extends StatefulWidget {
@@ -10,21 +11,10 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
+ImageUrl imageUrl = ImageUrl();
+
 class _HomePageState extends State<HomePage> {
-  ImageUrl imageUrl = ImageUrl();
   int isSelected = 0;
-  List<String> serviceType = [
-    'Hair',
-    'Beard',
-    'Shampoo',
-    'Masaj',
-    'Waxing',
-    'Facial',
-    'Manicure',
-    'Pedicure',
-    'Massage',
-    'Trimming',
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -84,10 +74,85 @@ class _HomePageState extends State<HomePage> {
                   },
                 ),
               ),
+              const Positioned(top: 200.0, child: MyList())
             ],
           ),
         ),
       ),
+    );
+  }
+}
+
+class MyList extends StatelessWidget {
+  const MyList({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      scrollDirection: Axis.vertical,
+      itemCount: 5,
+      itemBuilder: (context, index) {
+        return Container(
+          width: 200,
+          height: 200,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(18),
+            image: DecorationImage(
+              image: NetworkImage(
+                imageUrl.backImageOne,
+              ),
+              fit: BoxFit.cover,
+            ),
+          ),
+          child: Stack(
+            children: [
+              Positioned(
+                  child: CircleAvatar(
+                radius: 18,
+                backgroundImage: NetworkImage(imageUrl.avatar),
+              )),
+              const Positioned(
+                  left: 8.0,
+                  bottom: 8.0,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('Adil Ayoub',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          )),
+                      SizedBox(height: 4),
+                      Text(
+                        'Subtitle',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 14,
+                        ),
+                      )
+                    ],
+                  )),
+              const Positioned(
+                  left: 8.0,
+                  bottom: 28.0,
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.location_on_outlined,
+                        size: 18,
+                      ),
+                      SizedBox(width: 8),
+                      Text(
+                        'Location',
+                        style: TextStyle(fontSize: 12),
+                      )
+                    ],
+                  ))
+            ],
+          ),
+        );
+      },
     );
   }
 }

@@ -170,8 +170,8 @@ class _CalScreenState extends State<CalScreen> {
 
   // function to calculate the input operation
   void equalPressed() {
-    String finaluserinput = userInput;
-    finaluserinput = userInput.replaceAll('x', '*');
+    // String finaluserinput = userInput;
+    // finaluserinput = userInput.replaceAll('x', '*');
     //! uncomment after adding the package math_expressions
     // Parser p = Parser();
     // Expression exp = p.parse(finaluserinput);
