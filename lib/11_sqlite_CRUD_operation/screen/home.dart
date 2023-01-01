@@ -215,7 +215,7 @@ class _SqfliteState extends State<Sqflite> {
                     child: ListView.builder(
                         itemCount: people.length,
                         itemBuilder: (context, index) {
-                          final person = people[index];
+                          //    final person = people[index];
                           return const ListTile();
                         }),
                   ),
