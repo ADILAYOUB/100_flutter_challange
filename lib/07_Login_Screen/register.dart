@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'forgot_password.dart';
-import 'register.dart';
+import 'login_screen.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+class RegisterScreen extends StatelessWidget {
+  const RegisterScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,14 +17,11 @@ class LoginScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SizedBox(
-                  height: 50,
+                  height: 30,
                 ),
                 const Text(
-                  "Login Here",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 25,
-                  ),
+                  "Register Here",
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
                 ),
                 Image.network(
                   "https://raw.githubusercontent.com/manishdayma/flutter_login_ui/main/assets/login.jpg",
@@ -33,11 +29,8 @@ class LoginScreen extends StatelessWidget {
                   width: double.infinity,
                 ),
                 const Text(
-                  "Get Logged In From Here",
-                  style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w200,
-                      color: Colors.blueGrey),
+                  "Get Registered From Here",
+                  style: TextStyle(fontSize: 12),
                 ),
                 const SizedBox(
                   height: 20,
@@ -66,9 +59,7 @@ class LoginScreen extends StatelessWidget {
                 ),
                 const Text(
                   "Password",
-                  style: TextStyle(
-                    fontSize: 12,
-                  ),
+                  style: TextStyle(fontSize: 12),
                 ),
                 Container(
                   decoration: BoxDecoration(
@@ -87,21 +78,30 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(
-                  height: 10,
+                  height: 20,
                 ),
-                InkWell(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (_) => const ForgotPassword()));
-                    },
-                    child: const Text(
-                      "Forgot Password ? ",
-                      style: TextStyle(fontSize: 12, color: Colors.grey),
-                    )),
+                const Text(
+                  "Confirm Password",
+                  style: TextStyle(fontSize: 12),
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Colors.black12,
+                      ),
+                      color: Colors.grey[100],
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(10))),
+                  child: const TextField(
+                    obscureText: true,
+                    decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: 'Enter Confirm Password',
+                        contentPadding: EdgeInsets.all(10)),
+                  ),
+                ),
                 const SizedBox(
-                  height: 10,
+                  height: 20,
                 ),
                 MaterialButton(
                   color: Theme.of(context).primaryColor,
@@ -112,15 +112,10 @@ class LoginScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10.0),
                       side: BorderSide(color: Theme.of(context).primaryColor)),
                   child: const Text(
-                    "Login",
+                    "Sign Up",
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (_) => const ForgotPassword()));
-                  },
+                  onPressed: () {},
                 ),
                 const SizedBox(
                   height: 8,
@@ -129,7 +124,7 @@ class LoginScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Text(
-                      "don't have an account ? ",
+                      "already have an account ? ",
                       style: TextStyle(
                           fontWeight: FontWeight.normal,
                           fontSize: 14,
@@ -140,10 +135,10 @@ class LoginScreen extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (_) => const RegisterScreen()));
+                                builder: (_) => const LoginScreen()));
                       },
                       child: Text(
-                        "Sign Up ",
+                        "Sign In ",
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 14,
