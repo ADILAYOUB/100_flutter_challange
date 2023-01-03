@@ -84,28 +84,28 @@
 // }
 
 // To do list SixthPg for
-import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '06_todolist_UI/todo_list_screen.dart';
+// import 'package:flutter/material.dart';
+// import 'package:flutter_riverpod/flutter_riverpod.dart';
+// import '06_todolist_UI/todo_list_screen.dart';
 
-void main() {
-  runApp(const ProviderScope(child: MyApp()));
-}
+// void main() {
+//   runApp(const ProviderScope(child: MyApp()));
+// }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+// class MyApp extends StatelessWidget {
+//   const MyApp({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Todo App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const TodoHomeThreePage(),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Todo App',
+//       theme: ThemeData(
+//         primarySwatch: Colors.blue,
+//       ),
+//       home: const TodoHomeThreePage(),
+//     );
+//   }
+// }
 
 //Login Screen
 // import 'package:flutter/material.dart';
@@ -118,7 +118,6 @@ class MyApp extends StatelessWidget {
 // class MyApp extends StatelessWidget {
 //   const MyApp({Key? key}) : super(key: key);
 
-//   // This widget is the root of your application.
 //   @override
 //   Widget build(BuildContext context) {
 //     return MaterialApp(
@@ -132,21 +131,22 @@ class MyApp extends StatelessWidget {
 //   }
 // }
 
-// ========================================================================
-//
-// import 'Calculator_Eighth/screen/calculator.dart';
-//
-// void main() => runApp(MyApp());
-//
-// class MyApp extends StatelessWidget{
-//   @override
-//   Widget build(BuildContext context){
-//     return MaterialApp(
-//       title: 'calculator ',
-//       home: CalScreen(),
-//     );
-//   }
-// }
+import '08_Calculator/screen/calculator.dart';
+import 'package:flutter/material.dart';
+
+void main() => runApp(const MyApp());
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      title: 'calculator ',
+      home: CalScreen(),
+    );
+  }
+}
 
 // ========================================================================
 // Building tic tack to game using android studio

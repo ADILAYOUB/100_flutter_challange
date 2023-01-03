@@ -16,6 +16,7 @@ dependencies:
   flutter_riverpod: 
   sqflite:
   font_awesome_flutter: ^10.5.0
+  math_expressions: ^2.4.0
 
 dev_dependencies:
   flutter_test:

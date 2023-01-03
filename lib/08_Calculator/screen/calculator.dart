@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-//! uncomment or add this package in yamal file
-//import 'package:math_expressions/math_expressions.dart';
+import 'package:math_expressions/math_expressions.dart';
 
 import '../button.dart';
 
@@ -169,15 +168,20 @@ class _CalScreenState extends State<CalScreen> {
   }
 
   // function to calculate the input operation
+// function to calculate the input operation
   void equalPressed() {
-    // String finaluserinput = userInput;
-    // finaluserinput = userInput.replaceAll('x', '*');
-    //! uncomment after adding the package math_expressions
-    // Parser p = Parser();
-    // Expression exp = p.parse(finaluserinput);
-    // ContextModel cm = ContextModel();
-    // double eval = exp.evaluate(EvaluationType.REAL, cm);
-    // outPut = eval.toString();
+    String finalUserInput = userInput;
+    finalUserInput = userInput.replaceAll('x', '*');
+
+    // Calculate the expression
+    Parser p = Parser();
+    Expression exp = p.parse(finalUserInput);
+    ContextModel cm = ContextModel();
+    double eval = exp.evaluate(EvaluationType.REAL, cm);
+    outPut = eval.toString();
+
+    // Clear the user input
+    userInput = '';
   }
 
   bool isOperator(String x) {
