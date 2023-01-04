@@ -7,37 +7,35 @@ class HomeController extends BaseController {
   final RestApiService _restApiService = RestApiService();
   List<Wallpaper> todaysList = [];
   List<Wallpaper> popularList = [];
-  List<Wallpaper> oldestList = [];
+  List<Wallpaper> topList = [];
 
-  Future<void> getListOfToday() async {
-    List<dynamic> resultList =
-        await _restApiService.convertJsonToObject("$api&${1}");
-    todaysList = resultList.cast<Wallpaper>();
+  Future<List<Wallpaper>> getListOfWallpapers(String queryParameters) async {
+    try {
+      List<dynamic> resultList = await _restApiService
+          .convertJsonToObject("$api&${1}$queryParameters");
+      return resultList.cast<Wallpaper>();
+    } catch (error) {
+      // Handle error and show appropriate message
+      return [];
+    }
   }
 
-  Future<void> getListOfPopular() async {
-    List<dynamic> resultList =
-        await _restApiService.convertJsonToObject("$api&${1}&order_by=popular");
-    popularList = resultList.cast<Wallpaper>();
-  }
-
-  Future<void> getlistoftop() async {
-    List<dynamic> resultList = await _restApiService
-        .convertJsonToObject("$api&${1}&order_by = downloads");
-    resultList = resultList.cast<Wallpaper>();
-  }
-
-  void getllData() async {
+  Future<void> getAllData() async {
     setState(true);
-    await getListOfToday();
-    await getListOfPopular();
-    await getlistoftop();
+    const todayQueryParameters = '';
+    const popularQueryParameters = '&order_by=popular';
+    const topQueryParameters = '&order_by=oldest';
+
+    todaysList = await getListOfWallpapers(todayQueryParameters);
+    popularList = await getListOfWallpapers(popularQueryParameters);
+    topList = await getListOfWallpapers(topQueryParameters);
+
     setState(false);
   }
 
   @override
   void onInit() {
-    getllData();
+    getAllData();
     super.onInit();
   }
 }

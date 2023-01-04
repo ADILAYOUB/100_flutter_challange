@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import '../controller/download_image.dart';
 import '../models/wallpaper.dart';
 import '../utils/colors.dart';
+import '../utils/style.dart';
 
 class WallpaperView extends StatelessWidget {
   final Wallpaper wallpaper;
@@ -53,14 +54,14 @@ class WallpaperView extends StatelessWidget {
                                 color: whitecolor,
                                 iconData: Icons.file_download_outlined),
                           ),
-                          //  const SetButton(),
-                          // CircleAvatar(
-                          //   backgroundColor: whitecolor,
-                          //   child: WallpaperViewButton(
-                          //       onPressed: () {},
-                          //       color: pinkcolor,
-                          //       iconData: Icons.favorite_border),
-                          // )
+                          const SetButton(),
+                          CircleAvatar(
+                            backgroundColor: whitecolor,
+                            child: WallpaperViewButton(
+                                onPressed: () {},
+                                color: pinkcolor,
+                                iconData: Icons.favorite_border),
+                          ),
                         ],
                       );
                     })
@@ -73,101 +74,100 @@ class WallpaperView extends StatelessWidget {
   }
 }
 
-// class SetButton extends StatelessWidget {
-//   const SetButton({
-//     Key? key,
-//   }) : super(key: key);
+class SetButton extends StatelessWidget {
+  const SetButton({
+    Key? key,
+  }) : super(key: key);
 
-//   @override
-//   Widget build(BuildContext context) {
-//     // return GestureDetector(
-//     //   onTap: () {
-//     //     // showBottomSheet(
-//     //     //     backgroundColor: Colors.transparent,
-//     //     //     context: context,
-//     //     //     builder: (context) => Container(
-//     //     //           decoration: const BoxDecoration(
-//     //     //               color: whitecolor,
-//     //     //               borderRadius: BorderRadius.only(
-//     //     //                   topLeft: Radius.circular(10),
-//     //     //                   topRight: Radius.circular(10))),
-//     //     //           height: Get.height * 0.4,
-//     //     //           child: ListView(
-//     //     //             children: [
-//     //     //               ListTile(
-//     //     //                 onTap: () {
-//     //     //                   Get.back();
-//     //     //                 },
-//     //     //                 leading: const Text(
-//     //     //                   "Set Wallpaper as :",
-//     //     //                   style: h1,
-//     //     //                 ),
-//     //     //                 trailing: const Icon(
-//     //     //                   Icons.cancel_outlined,
-//     //     //                   color: blackcolor,
-//     //     //                 ),
-//     //     //               ),
-//     //     //               ListTile(
-//     //     //                 onTap: () {
-//     //     //                   Get.back();
-//     //     //                 },
-//     //     //                 leading: const Icon(
-//     //     //                   Icons.home_filled,
-//     //     //                   color: blackcolor,
-//     //     //                 ),
-//     //     //                 title: const Text(
-//     //     //                   "Home Screen",
-//     //     //                   style: h1,
-//     //     //                 ),
-//     //     //               ),
-//     //     //               ListTile(
-//     //     //                 onTap: () {
-//     //     //                   Get.back();
-//     //     //                 },
-//     //     //                 leading: const Icon(
-//     //     //                   Icons.lock_open,
-//     //     //                   color: blackcolor,
-//     //     //                 ),
-//     //     //                 title: const Text(
-//     //     //                   "Lock Screen",
-//     //     //                   style: h1,
-//     //     //                 ),
-//     //     //               ),
-//     //     //               ListTile(
-//     //     //                 onTap: () {
-//     //     //                   Get.back();
-//     //     //                 },
-//     //     //                 leading: const Icon(
-//     //     //                   Icons.screen_lock_landscape,
-//     //     //                   color: blackcolor,
-//     //     //                 ),
-//     //     //                 title: const Text(
-//     //     //                   "Home & Lock Screen",
-//     //     //                   style: h1,
-//     //     //                 ),
-//     //     //               ),
-//     //     //             ],
-//     //     //           ),
-//     //     //         ));
-//     //   },
-//     //   child: Container(
-//     //     padding: const EdgeInsets.symmetric(
-//     //       horizontal: 80,
-//     //       vertical: 15,
-//     //     ),
-//     //     child: const Text(
-//     //       "SET AS",
-//     //       style: buttons,
-//     //     ),
-//     //     decoration: BoxDecoration(
-//     //       borderRadius: BorderRadius.circular(50),
-//     //       color: pinkcolor,
-//     //     ),
-//     //   ),
-
-//     // );
-//   }
-// }
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        showBottomSheet(
+            backgroundColor: Colors.transparent,
+            context: context,
+            builder: (context) => Container(
+                  decoration: const BoxDecoration(
+                      color: whitecolor,
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(10),
+                          topRight: Radius.circular(10))),
+                  height: Get.height * 0.4,
+                  child: ListView(
+                    children: [
+                      ListTile(
+                        onTap: () {
+                          Get.back();
+                        },
+                        leading: const Text(
+                          "Set Wallpaper as :",
+                          style: h1,
+                        ),
+                        trailing: const Icon(
+                          Icons.cancel_outlined,
+                          color: blackcolor,
+                        ),
+                      ),
+                      ListTile(
+                        onTap: () {
+                          Get.back();
+                        },
+                        leading: const Icon(
+                          Icons.home_filled,
+                          color: blackcolor,
+                        ),
+                        title: const Text(
+                          "Home Screen",
+                          style: h1,
+                        ),
+                      ),
+                      ListTile(
+                        onTap: () {
+                          Get.back();
+                        },
+                        leading: const Icon(
+                          Icons.lock_open,
+                          color: blackcolor,
+                        ),
+                        title: const Text(
+                          "Lock Screen",
+                          style: h1,
+                        ),
+                      ),
+                      ListTile(
+                        onTap: () {
+                          Get.back();
+                        },
+                        leading: const Icon(
+                          Icons.screen_lock_landscape,
+                          color: blackcolor,
+                        ),
+                        title: const Text(
+                          "Home & Lock Screen",
+                          style: h1,
+                        ),
+                      ),
+                    ],
+                  ),
+                ));
+      },
+      child: Container(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 80,
+          vertical: 15,
+        ),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(50),
+          color: pinkcolor,
+        ),
+        child: const Text(
+          "SET AS",
+          style: buttons,
+        ),
+      ),
+    );
+  }
+}
 
 class WallpaperViewButton extends StatelessWidget {
   final Function onPressed;

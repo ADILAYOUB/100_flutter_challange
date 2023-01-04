@@ -78,7 +78,7 @@ class HomeWallpaper extends StatelessWidget {
                         child: CircularProgressIndicator(),
                       )
                     : SharedGridWidget(
-                        wallpapers: controller.oldestList,
+                        wallpapers: controller.topList,
                       ),
               ],
             );

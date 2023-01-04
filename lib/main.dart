@@ -160,53 +160,53 @@
 * */
 
 //! =============Tic Tac Toe =================================
-import 'package:flutter/material.dart';
-import 'package:flutte_challange/09_Tic_Tac_Toe/home_screen.dart';
-
-void main() => runApp(const MyApp());
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'tic tack toe',
-      home: TicScreen(),
-    );
-  }
-}
-
-//! ======================== Wallpaper====================================
-
 // import 'package:flutter/material.dart';
-// import 'package:get/get.dart';
-// import 'package:hive_flutter/hive_flutter.dart';
+// import 'package:flutte_challange/09_Tic_Tac_Toe/home_screen.dart';
 
-// import '10_WallPaper_Project/utils/constants/const.dart';
-// import '10_WallPaper_Project/view/home.dart';
-
-// Future<void> main() async {
-//   await Hive.initFlutter();
-//   Hive.openBox<String>(downloadBox);
-//   runApp(const MyApp());
-// }
+// void main() => runApp(const MyApp());
 
 // class MyApp extends StatelessWidget {
-//   const MyApp({Key? key}) : super(key: key);
+//   const MyApp({super.key});
 
 //   @override
 //   Widget build(BuildContext context) {
-//     return GetMaterialApp(
-//       title: 'Flutter Demo',
-//       debugShowCheckedModeBanner: false,
-//       theme: ThemeData(
-//         primarySwatch: Colors.blue,
-//       ),
-//       home: const HomeWallpaper(),
+//     return const MaterialApp(
+//       title: 'tic tack toe',
+//       home: TicScreen(),
 //     );
 //   }
 // }
+
+//! ======================== Wallpaper====================================
+
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+
+import '10_WallPaper_Project/utils/constants/const.dart';
+import '10_WallPaper_Project/view/home.dart';
+
+Future<void> main() async {
+  await Hive.initFlutter();
+  Hive.openBox<String>(downloadBox);
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GetMaterialApp(
+      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const HomeWallpaper(),
+    );
+  }
+}
 
 //! =================  11_sqlite_CRUD_operation   ====================================
 
