@@ -179,41 +179,16 @@
 
 //! ======================== Wallpaper====================================
 
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:hive_flutter/hive_flutter.dart';
-
-import '10_WallPaper_Project/utils/constants/const.dart';
-import '10_WallPaper_Project/view/home.dart';
-
-Future<void> main() async {
-  await Hive.initFlutter();
-  Hive.openBox<String>(downloadBox);
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return GetMaterialApp(
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const HomeWallpaper(),
-    );
-  }
-}
-
-//! =================  11_sqlite_CRUD_operation   ====================================
-
-// import 'package:flutte_challange/11_sqlite_CRUD_operation/screen/home.dart';
 // import 'package:flutter/material.dart';
+// import 'package:get/get.dart';
+// import 'package:hive_flutter/hive_flutter.dart';
 
-// void main() {
+// import '10_WallPaper_Project/utils/constants/const.dart';
+// import '10_WallPaper_Project/view/home.dart';
+
+// Future<void> main() async {
+//   await Hive.initFlutter();
+//   Hive.openBox<String>(downloadBox);
 //   runApp(const MyApp());
 // }
 
@@ -222,16 +197,41 @@ class MyApp extends StatelessWidget {
 
 //   @override
 //   Widget build(BuildContext context) {
-//     return MaterialApp(
+//     return GetMaterialApp(
 //       title: 'Flutter Demo',
 //       debugShowCheckedModeBanner: false,
 //       theme: ThemeData(
 //         primarySwatch: Colors.blue,
 //       ),
-//       home: const Sqflite(),
+//       home: const HomeWallpaper(),
 //     );
 //   }
 // }
+
+//! =================  11_sqlite_CRUD_operation   ====================================
+
+import 'package:flutte_challange/11_sqlite_CRUD_operation/screen/home.dart';
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: Sqflite(),
+    );
+  }
+}
 
 //! =================  airbnb book opeining ui   ====================================
 // import 'package:flutte_challange/16_airbnb_book_opning_ui/lib/home_page.dart';
