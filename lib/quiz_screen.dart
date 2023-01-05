@@ -26,6 +26,7 @@ class _QuizScreenState extends State<QuizScreen> {
     });
   }
 
+  List<int> selectedAnswers = [];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -118,29 +119,33 @@ class _QuizScreenState extends State<QuizScreen> {
         child: ElevatedButton(
           onPressed: () {
             if (isAnswered) {
-              if (correctAnswer == selectedAnswer) {
-                correctAnswers++;
-              } else {
-                wrongAnswers++;
+              if (!selectedAnswers.contains(currentIndex)) {
+                // Check if the selected answer for the current question has not been answered before
+                if (correctAnswer == selectedAnswer) {
+                  correctAnswers++;
+                } else {
+                  wrongAnswers++;
+                }
+                selectedAnswers.add(currentIndex);
               }
+
               currentIndex++;
+
               if (currentIndex != questions.length) {
                 pageController.jumpToPage(currentIndex);
-                resetSelection(); // Reset the selected answer
+                resetSelection();
               } else {
-                print(correctAnswers);
-                print(wrongAnswers);
-                //navigate to the result screen
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: ((context) => ResultScreen(
-                        correctAnswer: correctAnswers,
-                        wrongAnswer: wrongAnswers)),
+                    builder: (context) => ResultScreen(
+                      correctAnswer: correctAnswers,
+                      wrongAnswer: wrongAnswers,
+                    ),
                   ),
                 );
               }
-            } else {}
+            }
           },
           // style: ElevatedButton.styleFrom(primaryColor:)
           style: ButtonStyle(
