@@ -289,3 +289,30 @@
 //     );
 //   }
 // }
+
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:sizer/sizer.dart';
+import '18_shoping_UI/screens/home.dart';
+
+void main() {
+  runApp(const App());
+}
+
+class App extends StatelessWidget {
+  const App({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Sizer(
+      builder: (cotnext, orientation, deviceType) => MaterialApp(
+        title: 'Shop UI',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+            primaryColor: Colors.teal,
+            textTheme: GoogleFonts.poppinsTextTheme()),
+        home: const HomeScreen(),
+      ),
+    );
+  }
+}
