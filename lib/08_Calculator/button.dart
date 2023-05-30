@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 
 class MyButton extends StatelessWidget {
   // declaring variables
-  // ignore: prefer_typing_uninitialized_variables
   final color;
   final textColor;
   final buttonText;

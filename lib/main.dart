@@ -143,7 +143,7 @@
 * 5. Loops
 * */
 
-// ========================================================================
+//! =============Tic Tac Toe =================================
 // import 'Tic_Tac_Toe Nineth/home_Screen.dart';
 
 // void main() => runApp(MyApp());
@@ -158,34 +158,42 @@
 //   }
 // }
 
-// ========================================================================
-// Wallpaper
+//! ======================== Wallpaper====================================
 
+// import 'package:flutter/material.dart';
+// import 'package:get/get.dart';
+// import 'package:hive_flutter/hive_flutter.dart';
+
+// import '10_WallPaper_Project/utils/constants/const.dart';
+// import '10_WallPaper_Project/view/home.dart';
+
+// Future<void> main() async {
+//   await Hive.initFlutter();
+//   Hive.openBox<String>(downloadBox);
+//   runApp(const MyApp());
+// }
+
+// class MyApp extends StatelessWidget {
+//   const MyApp({Key? key}) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return GetMaterialApp(
+//       title: 'Flutter Demo',
+//       debugShowCheckedModeBanner: false,
+//       theme: ThemeData(
+//         primarySwatch: Colors.blue,
+//       ),
+//       home: const HomeWallpaper(),
+//     );
+//   }
+// }
+
+//! ===================== Barbar appointment design =============
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 
-import '10_WallPaper_Project/utils/constants/const.dart';
-import '10_WallPaper_Project/view/home.dart';
+import '11/app/app.dart';
 
-Future<void> main() async {
-  await Hive.initFlutter();
-  Hive.openBox<String>(downloadBox);
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return GetMaterialApp(
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const HomeWallpaper(),
-    );
-  }
+void main() {
+  runApp(MyApp());
 }
