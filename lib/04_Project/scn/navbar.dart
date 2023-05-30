@@ -1,4 +1,4 @@
-import 'package:eng/04_Project/scn/settings.dart';
+import 'package:flutte_challange/04_Project/scn/settings.dart';
 import 'package:flutter/material.dart';
 
 import 'Profile.dart';

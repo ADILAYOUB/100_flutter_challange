@@ -1,20 +1,23 @@
-import 'package:eng/10_WallPaper_Project/controller/base_controller.dart';
-import 'package:eng/10_WallPaper_Project/utils/constants/const.dart';
-import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:get/get.dart';
-import 'package:hive/hive.dart';
+// ignore: depend_on_referenced_packages
+import 'package:hive/hive.dart' as hive;
+import '../utils/constants/const.dart';
+import 'base_controller.dart';
 
 class DownloadController extends BaseController {
   void insertImagePath({String? url, String? path}) async {
-    var box = await Hive.openBox<String>(downloadBox);
+    var box = await hive.Hive.openBox<String>(downloadBox);
     box.put(url, path!);
   }
 }
 
 class ImageController extends DownloadController {
   Future<void> downloadImage(String url) async {
-    var file = await DefaultCacheManager().getSingleFile(url);
-    insertImagePath(url: url, path: file.path);
+    // install the latest version of flutter _cache_manager which is
+    // compatible with http latest version
+
+    // var file = await DefaultCacheManager().getSingleFile(url);
+    // insertImagePath(url: url, path: file.path);
     Get.showSnackbar(const GetSnackBar(
       title: 'Done',
       message: 'Image Download',

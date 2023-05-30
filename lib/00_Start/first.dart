@@ -4,6 +4,7 @@ class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _HomePageState createState() => _HomePageState();
 }
 
@@ -82,7 +83,7 @@ class _HomePageState extends State<HomePage> {
           padding: const EdgeInsets.all(8.0),
           child: FloatingActionButton(
             backgroundColor: _currentIndex == 1 ? Colors.blue : Colors.blueGrey,
-            child: Icon(Icons.home),
+            child: const Icon(Icons.home),
             onPressed: () => setState(() {
               _currentIndex = 1;
             }),
@@ -101,10 +102,10 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return const SizedBox(
       width: double.infinity,
       height: double.infinity,
-      child: const Center(child: Text('Home Screen')),
+      child: Center(child: Text('Home Screen')),
     );
   }
 }
@@ -115,10 +116,10 @@ class SettingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return const SizedBox(
       width: double.infinity,
       height: double.infinity,
-      child: const Center(child: Text('Setting Screen')),
+      child: Center(child: Text('Setting Screen')),
     );
   }
 }
@@ -130,10 +131,10 @@ class CategoryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return const SizedBox(
       width: double.infinity,
       height: double.infinity,
-      child: const Center(child: Text('Category Screen')),
+      child: Center(child: Text('Category Screen')),
     );
   }
 }

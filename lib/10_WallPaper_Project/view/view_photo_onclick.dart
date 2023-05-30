@@ -1,8 +1,9 @@
-import 'package:eng/10_WallPaper_Project/controller/download_image.dart';
-import 'package:eng/10_WallPaper_Project/models/wallpaper.dart';
-import 'package:eng/10_WallPaper_Project/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../controller/download_image.dart';
+import '../models/wallpaper.dart';
+import '../utils/colors.dart';
 
 class WallpaperView extends StatelessWidget {
   final Wallpaper wallpaper;

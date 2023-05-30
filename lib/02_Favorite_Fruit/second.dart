@@ -16,10 +16,11 @@ class _MyFavoriteFruit extends State<FavoriteFruit> {
       home: Scaffold(
         appBar: AppBar(
           title: Text(
-              'My favorite Player is ' + Provider.of<Favorite>(context).fruit),
+              'My favorite Player is ${Provider.of<Favorite>(context).fruit}'),
           centerTitle: true,
         ),
         body: Center(
+          // ignore: avoid_unnecessary_containers
           child: Container(
             child: Column(
               children: [
@@ -35,6 +36,7 @@ class _MyFavoriteFruit extends State<FavoriteFruit> {
   }
 }
 
+// ignore: must_be_immutable
 class FruitButton extends StatelessWidget {
   late String fruit;
   FruitButton({Key? key, required this.fruit}) : super(key: key);

@@ -1,7 +1,7 @@
-import 'package:eng/10_WallPaper_Project/controller/base_controller.dart';
-import 'package:eng/10_WallPaper_Project/models/wallpaper.dart';
-import 'package:eng/10_WallPaper_Project/services/rest_api_services.dart';
-import 'package:eng/10_WallPaper_Project/utils/constants/const.dart';
+import '../models/wallpaper.dart';
+import '../services/rest_api_services.dart';
+import '../utils/constants/const.dart';
+import 'base_controller.dart';
 
 class HomeController extends BaseController {
   final RestApiService _restApiService = RestApiService();
@@ -10,17 +10,21 @@ class HomeController extends BaseController {
   List<Wallpaper> oldestList = [];
 
   Future<void> getListOfToday() async {
-    todaysList = await _restApiService.convertJsonToObject(api + "&${1}");
+    List<dynamic> resultList =
+        await _restApiService.convertJsonToObject("$api&${1}");
+    todaysList = resultList.cast<Wallpaper>();
   }
 
   Future<void> getListOfPopular() async {
-    popularList = await _restApiService
-        .convertJsonToObject(api + "&${1}&order_by=popular");
+    List<dynamic> resultList =
+        await _restApiService.convertJsonToObject("$api&${1}&order_by=popular");
+    popularList = resultList.cast<Wallpaper>();
   }
 
   Future<void> getlistoftop() async {
-    oldestList = await _restApiService
-        .convertJsonToObject(api + "&${1}&order_by=downloads");
+    List<dynamic> resultList = await _restApiService
+        .convertJsonToObject("$api&${1}&order_by = downloads");
+    resultList = resultList.cast<Wallpaper>();
   }
 
   void getllData() async {

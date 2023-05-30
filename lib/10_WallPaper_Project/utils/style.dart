@@ -1,5 +1,6 @@
-import 'package:eng/10_WallPaper_Project/utils/colors.dart';
 import 'package:flutter/material.dart';
+
+import 'colors.dart';
 
 const h1 = TextStyle(
   color: blackcolor,

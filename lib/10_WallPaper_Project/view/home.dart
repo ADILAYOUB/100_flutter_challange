@@ -1,12 +1,12 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables
 
-import 'package:eng/10_WallPaper_Project/controller/home_controller.dart';
-import 'package:eng/10_WallPaper_Project/utils/colors.dart';
-import 'package:eng/10_WallPaper_Project/utils/style.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../controller/home_controller.dart';
+import '../utils/colors.dart';
 import '../utils/shared/shared_grid_view.dart';
+import '../utils/style.dart';
 
 class HomeWallpaper extends StatelessWidget {
   const HomeWallpaper({Key? key}) : super(key: key);

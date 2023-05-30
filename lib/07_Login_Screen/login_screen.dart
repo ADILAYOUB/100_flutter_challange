@@ -59,7 +59,7 @@ class _LoginDemoState extends State<LoginDemo> {
               ),
             ),
             // ignore: deprecated_member_use
-            FlatButton(
+            ElevatedButton(
               onPressed: () {
                 //TODO FORGOT PASSWORD SCREEN GOES HERE
               },
@@ -74,7 +74,7 @@ class _LoginDemoState extends State<LoginDemo> {
               decoration: BoxDecoration(
                   color: Colors.blue, borderRadius: BorderRadius.circular(20)),
               // ignore: deprecated_member_use
-              child: FlatButton(
+              child: ElevatedButton(
                 onPressed: () {
                   // Navigator.push(
                   //     context, MaterialPageRoute(builder: (_) => MyAppLogin()));

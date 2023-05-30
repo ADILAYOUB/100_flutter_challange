@@ -1,6 +1,7 @@
 import 'dart:convert';
-import 'package:eng/10_WallPaper_Project/models/wallpaper.dart';
 import 'package:http/http.dart' as http;
+
+import '../models/wallpaper.dart';
 
 class RestApiService {
   Future<List<dynamic>> getJsonDataFromApi(String url) async {

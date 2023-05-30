@@ -1,8 +1,9 @@
-import 'package:eng/10_WallPaper_Project/models/wallpaper.dart';
-import 'package:eng/10_WallPaper_Project/utils/colors.dart';
-import 'package:eng/10_WallPaper_Project/view/view_photo_onclick.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../models/wallpaper.dart';
+import '../../view/view_photo_onclick.dart';
+import '../colors.dart';
 
 // ignore: must_be_immutable
 

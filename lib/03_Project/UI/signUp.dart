@@ -4,6 +4,8 @@ import '../header.dart';
 import 'package:flutter/material.dart';
 
 class SignupPage extends StatelessWidget {
+  const SignupPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -11,7 +13,7 @@ class SignupPage extends StatelessWidget {
       children: <Widget>[
         Container(
           color: Colors.indigo[100],
-          child: Column(
+          child: const Column(
             children: [Signup()],
           ),
         ),
@@ -21,6 +23,8 @@ class SignupPage extends StatelessWidget {
 }
 
 class Signup extends StatelessWidget {
+  const Signup({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -126,9 +130,7 @@ class SignupCard extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(vertical: 12.0),
                     splashColor: Colors.indigoAccent,
                     elevation: 2.0,
-                    onPressed: () {
-                      Null enabled;
-                    },
+                    onPressed: () {},
                     child: const Text("GET OTP",
                         style: TextStyle(fontSize: 14.0))),
               )),

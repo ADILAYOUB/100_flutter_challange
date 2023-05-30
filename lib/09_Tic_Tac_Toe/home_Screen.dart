@@ -176,7 +176,7 @@ class _ticScreenState extends State<ticScreen> {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-            title: Text("\" " + winner + " \" is Winner!!!"),
+            title: Text("\" $winner \" is Winner!!!"),
             actions: [
               TextButton(
                 child: const Text("Play Again"),
