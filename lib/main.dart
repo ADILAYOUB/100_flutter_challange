@@ -190,10 +190,19 @@
 // }
 
 //! ===================== Barbar appointment design =============
+// import 'package:flutter/material.dart';
+
+// import '11/app/app.dart';
+
+// void main() {
+//   runApp(MyApp());
+// }
+
+//! =============================== Movie Application ==============
 import 'package:flutter/material.dart';
 
-import '11/app/app.dart';
+import '12/app/app.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
