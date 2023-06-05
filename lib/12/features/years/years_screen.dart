@@ -1,5 +1,8 @@
+import 'package:flutte_challange/12/core/constants.dart';
 import 'package:flutte_challange/12/core/widgets/primary_button.dart';
 import 'package:flutter/material.dart';
+
+import '../../app/shows.dart';
 
 class YearScreen extends StatefulWidget {
   const YearScreen(
@@ -57,7 +60,10 @@ class _YearScreenState extends State<YearScreen> {
             label: '${year.ceil()}',
           ),
           const Spacer(),
-          PrimaryButton(onPressed: () {}, text: 'Find')
+          PrimaryButton(
+              onPressed: () => Navigator.of(context).push(ResultScreen.route()),
+              text: 'Find'),
+          const SizedBox(height: kMediumSpacing)
         ],
       )),
     );
