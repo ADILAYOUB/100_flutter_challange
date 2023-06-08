@@ -39,6 +39,8 @@ dependencies:
   get: ^4.6.5
   hive_flutter: ^1.1.0
   http: ^1.0.0
+  riverpod: ^2.3.6
+  flutter_riverpod: ^2.3.6
 
 dev_dependencies:
   flutter_test:

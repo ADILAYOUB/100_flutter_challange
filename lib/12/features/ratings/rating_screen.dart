@@ -1,6 +1,8 @@
 import 'package:flutte_challange/12/core/widgets/primary_button.dart';
 import 'package:flutter/material.dart';
 
+import '../../core/constants.dart';
+
 class RatingScreen extends StatefulWidget {
   const RatingScreen(
       {super.key, required this.nextPage, required this.previousPage});
@@ -57,7 +59,8 @@ class _RatingScreenState extends State<RatingScreen> {
             label: '${rating.ceil()}',
           ),
           const Spacer(),
-          PrimaryButton(onPressed: widget.nextPage, text: 'Continue')
+          PrimaryButton(onPressed: widget.nextPage, text: 'Continue'),
+          const SizedBox(height: kMediumSpacing)
         ],
       )),
     );

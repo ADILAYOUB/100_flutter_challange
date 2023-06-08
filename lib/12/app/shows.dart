@@ -60,7 +60,8 @@ class ResultScreen extends StatelessWidget {
         )),
         PrimaryButton(
             onPressed: () => Navigator.of(context).pop(),
-            text: 'Find Another Movie ')
+            text: 'Find Another Movie '),
+        const SizedBox(height: kMediumSpacing)
       ]),
     );
   }
