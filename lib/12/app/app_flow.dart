@@ -1,50 +1,30 @@
+import 'package:flutte_challange/12/app/app_flow_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../features/genre/genre_screen.dart';
 import '../features/landingPage/landing_page.dart';
 import '../features/ratings/rating_screen.dart';
 import '../features/years/years_screen.dart';
 
-class MovieFlow extends StatefulWidget {
+class MovieFlow extends ConsumerWidget {
+  //very similar to the state less widget this will make it possible to get the notifer that we get from the reiverpood
   const MovieFlow({super.key});
 
   @override
-  State<MovieFlow> createState() => _MovieFlowState();
-}
-
-class _MovieFlowState extends State<MovieFlow> {
-  final pageController = PageController();
-
-  void nextPage() {
-    pageController.nextPage(
-      duration: const Duration(milliseconds: 600),
-      curve: Curves.easeInOut,
-    );
-  }
-
-  void previousPage() {
-    pageController.previousPage(
-      duration: const Duration(milliseconds: 600),
-      curve: Curves.easeInOut,
-    );
-  }
-
-  @override
-  void dispose() {
-    pageController.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    // ref let us to get it from provider
     return PageView(
-      controller: pageController,
+// for controller we are going to use the ref object that we get form the consumer widget
+      controller: ref.watch(movieFlowControllerProvider).pageController,
       physics: const NeverScrollableScrollPhysics(),
-      children: [
-        LandingScreen(nextPage: nextPage, previousPage: previousPage),
-        GenreScreen(nextPage: nextPage, previousPage: previousPage),
-        RatingScreen(nextPage: nextPage, previousPage: previousPage),
-        YearScreen(nextPage: nextPage, previousPage: previousPage)
+      children: const [
+        // now we can provide methods to the other parts of the application
+        // without actually passing them so we remove the call backs that we pass to every screen
+        LandingScreen(),
+        GenreScreen(),
+        RatingScreen(),
+        YearScreen()
       ],
     );
   }

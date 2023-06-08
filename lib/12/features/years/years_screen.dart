@@ -1,28 +1,21 @@
+import 'package:flutte_challange/12/app/app_flow_controller.dart';
 import 'package:flutte_challange/12/core/constants.dart';
 import 'package:flutte_challange/12/core/widgets/primary_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../app/shows.dart';
 
-class YearScreen extends StatefulWidget {
-  const YearScreen(
-      {super.key, required this.nextPage, required this.previousPage});
-  final VoidCallback nextPage;
-  final VoidCallback previousPage;
-
+class YearScreen extends ConsumerWidget {
+  const YearScreen({Key? key}) : super(key: key);
   @override
-  State<YearScreen> createState() => _YearScreenState();
-}
-
-class _YearScreenState extends State<YearScreen> {
-  double year = 10;
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(
         leading: BackButton(
-          onPressed: widget.previousPage,
+          onPressed:
+              ref.read(movieFlowControllerProvider.notifier).previousPage,
         ),
       ),
       body: Center(
@@ -37,7 +30,8 @@ class _YearScreenState extends State<YearScreen> {
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('${year.ceil()}', style: theme.textTheme.headlineLarge),
+              Text('${ref.watch(movieFlowControllerProvider).years}',
+                  style: theme.textTheme.headlineLarge),
               Text('Year Back',
                   style: theme.textTheme.headlineMedium?.copyWith(
                       color: theme.textTheme.headlineMedium?.color
@@ -46,18 +40,16 @@ class _YearScreenState extends State<YearScreen> {
           ),
           const Spacer(),
           Slider(
-            value: year,
+            value: ref.watch(movieFlowControllerProvider).years.toDouble(),
             onChanged: (value) {
-              setState(
-                () {
-                  year = value;
-                },
-              );
+              ref
+                  .read(movieFlowControllerProvider.notifier)
+                  .updateYears(value.toInt());
             },
             min: 0,
             max: 70,
             divisions: 70,
-            label: '${year.ceil()}',
+            label: '${ref.watch(movieFlowControllerProvider).years}',
           ),
           const Spacer(),
           PrimaryButton(

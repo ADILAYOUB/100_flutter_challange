@@ -39,7 +39,7 @@ class MovieFlowController extends StateNotifier<MovieFlowState> {
       genres: [
         // we are going to copy the state with the new list of Genres
         // state will be amlost like before
-        for (final oldGenre in state.gneres)
+        for (final oldGenre in state.genres)
           // if one of the old genres is in the state list we are going to pass that to the list
           if (oldGenre ==
               genre) // if this is true we are going to toggleSelected on that one
@@ -72,7 +72,7 @@ class MovieFlowController extends StateNotifier<MovieFlowState> {
     // happen that is way >=1 and want to know this right away with if condition
     if (state.pageController.page! >= 1) {
       //guard class it will make sure that if we don't have any selected to true
-      if (!state.gneres.any((element) => element.isSelected == true)) {
+      if (!state.genres.any((element) => element.isSelected == true)) {
         // we want to reurn or early of this method
         return;
         // to pass through the genre screen you have to selcted the genre

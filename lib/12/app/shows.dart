@@ -1,28 +1,21 @@
+import 'package:flutte_challange/12/app/app_flow_controller.dart';
 import 'package:flutte_challange/12/core/constants.dart';
 import 'package:flutte_challange/12/core/models/movie.dart';
 import 'package:flutte_challange/12/core/widgets/primary_button.dart';
 import 'package:flutte_challange/12/features/genre/genre.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class ResultScreen extends StatelessWidget {
+class ResultScreen extends ConsumerWidget {
   // user material nvigation
   static route({bool fullscreenDialog = true}) => (MaterialPageRoute(
       builder: (context) => const ResultScreen(),
       fullscreenDialog: fullscreenDialog));
   const ResultScreen({super.key});
   final double movieheight = 160;
-  //create a fake movie to simulate the ui
-  final movie = const Movie(
-      title: 'The Hero',
-      overview:
-          'This is the overview of the movie The Hero based on the indian Super hero in the mist of war and terror in the country',
-      vote: 4.3,
-      genres: [Genre(name: 'Action'), Genre(name: 'Fantacy')],
-      releaseDate: '2019-10-12',
-      backdropPath: '',
-      posterPath: '');
+
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
 
     return Scaffold(
@@ -41,7 +34,7 @@ class ResultScreen extends StatelessWidget {
                         .width, // full width of the screen
                     bottom: -(movieheight / 2), // push if further down
                     child: MovieImageDetails(
-                      movie: movie,
+                      movie: ref.watch(movieFlowControllerProvider).movie,
                       movieHeight: movieheight,
                     )),
               ],
@@ -52,7 +45,7 @@ class ResultScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(12.0),
               child: Text(
-                movie.overview,
+                ref.watch(movieFlowControllerProvider).movie.overview,
                 style: theme.textTheme.bodyMedium,
               ),
             )
@@ -97,14 +90,14 @@ class CoverImage extends StatelessWidget {
   }
 }
 
-class MovieImageDetails extends StatelessWidget {
+class MovieImageDetails extends ConsumerWidget {
   const MovieImageDetails(
       {super.key, required this.movie, required this.movieHeight});
   final Movie movie;
   final double movieHeight;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 24.0),
@@ -129,7 +122,7 @@ class MovieImageDetails extends StatelessWidget {
               Row(
                 children: [
                   Text(
-                    '4.6',
+                    movie.vote.toString(),
                     style: theme.textTheme.bodyMedium?.copyWith(
                         color: theme.textTheme.bodyMedium?.color
                             ?.withOpacity(0.62)),

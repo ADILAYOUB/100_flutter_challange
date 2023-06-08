@@ -29,13 +29,13 @@ class MovieFlowState {
   final PageController pageController;
   final int ratings;
   final int years;
-  final List<Genre> gneres;
+  final List<Genre> genres;
   final Movie movie;
   const MovieFlowState({
     required this.pageController,
     this.ratings = 5,
     this.years = 10,
-    this.gneres = gneresMock,
+    this.genres = gneresMock,
     this.movie = movieMock,
   });
 
@@ -54,7 +54,7 @@ class MovieFlowState {
         pageController: pageController ?? this.pageController,
         ratings: rating ?? ratings,
         years: year ?? years,
-        gneres: genres ?? gneres,
+        genres: genres ?? this.genres,
         movie: movie ?? this.movie);
   }
 
@@ -68,7 +68,7 @@ class MovieFlowState {
         other.pageController == pageController &&
         other.ratings == ratings &&
         other.years == years &&
-        other.gneres == gneres &&
+        other.genres == genres &&
         other.movie == movie;
   }
 
@@ -77,6 +77,6 @@ class MovieFlowState {
       pageController.hashCode ^
       ratings.hashCode ^
       years.hashCode ^
-      gneres.hashCode ^
+      genres.hashCode ^
       movie.hashCode;
 }

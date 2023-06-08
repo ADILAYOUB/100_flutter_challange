@@ -1,29 +1,22 @@
+import 'package:flutte_challange/12/app/app_flow_controller.dart';
 import 'package:flutte_challange/12/core/widgets/primary_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../core/constants.dart';
 
-class RatingScreen extends StatefulWidget {
-  const RatingScreen(
-      {super.key, required this.nextPage, required this.previousPage});
-  final VoidCallback nextPage;
-  final VoidCallback previousPage;
+class RatingScreen extends ConsumerWidget {
+  const RatingScreen({super.key});
 
   @override
-  State<RatingScreen> createState() => _RatingScreenState();
-}
-
-class _RatingScreenState extends State<RatingScreen> {
-  //kepping track of the state
-  double rating = 5;
-
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
 
     return Scaffold(
       appBar: AppBar(
-        leading: BackButton(onPressed: widget.previousPage),
+        leading: BackButton(
+            onPressed:
+                ref.read(movieFlowControllerProvider.notifier).previousPage),
       ),
       body: Center(
           child: Column(
@@ -37,7 +30,9 @@ class _RatingScreenState extends State<RatingScreen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('${rating.ceil()}', style: theme.textTheme.displayMedium),
+              // ref.watch when you are depending on values that are going to update
+              Text('${ref.watch(movieFlowControllerProvider).ratings}',
+                  style: theme.textTheme.displayMedium),
               const Icon(
                 Icons.star_rounded,
                 size: 64,
@@ -48,18 +43,22 @@ class _RatingScreenState extends State<RatingScreen> {
           const Spacer(),
           Slider(
             onChanged: (value) {
-              setState(() {
-                rating = value;
-              });
+              // user ref.read when you are going to do simple  task such as calling a mehod in an onchange or onTap
+              ref
+                  .read(movieFlowControllerProvider.notifier)
+                  .updateRating(value.toInt());
             },
-            value: rating,
+            value: ref.watch(movieFlowControllerProvider).ratings.toDouble(),
             min: 1,
             max: 10,
             divisions: 9,
-            label: '${rating.ceil()}',
+            label: '${ref.watch(movieFlowControllerProvider).ratings}',
           ),
           const Spacer(),
-          PrimaryButton(onPressed: widget.nextPage, text: 'Continue'),
+          PrimaryButton(
+              onPressed:
+                  ref.read(movieFlowControllerProvider.notifier).nextPage,
+              text: 'Continue'),
           const SizedBox(height: kMediumSpacing)
         ],
       )),
