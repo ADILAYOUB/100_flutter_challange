@@ -4,7 +4,7 @@ import '../header.dart';
 import 'package:flutter/material.dart';
 
 class SignupPage extends StatelessWidget {
-  const SignupPage({super.key});
+  const SignupPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,8 +13,8 @@ class SignupPage extends StatelessWidget {
       children: <Widget>[
         Container(
           color: Colors.indigo[100],
-          child: const Column(
-            children: [Signup()],
+          child: Column(
+            children: const [Signup()],
           ),
         ),
       ],
@@ -23,7 +23,7 @@ class SignupPage extends StatelessWidget {
 }
 
 class Signup extends StatelessWidget {
-  const Signup({super.key});
+  const Signup({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

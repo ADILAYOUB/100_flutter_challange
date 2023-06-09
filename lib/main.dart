@@ -160,53 +160,31 @@
 
 //! ======================== Wallpaper====================================
 
-// import 'package:flutter/material.dart';
-// import 'package:get/get.dart';
-// import 'package:hive_flutter/hive_flutter.dart';
-
-// import '10_WallPaper_Project/utils/constants/const.dart';
-// import '10_WallPaper_Project/view/home.dart';
-
-// Future<void> main() async {
-//   await Hive.initFlutter();
-//   Hive.openBox<String>(downloadBox);
-//   runApp(const MyApp());
-// }
-
-// class MyApp extends StatelessWidget {
-//   const MyApp({Key? key}) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return GetMaterialApp(
-//       title: 'Flutter Demo',
-//       debugShowCheckedModeBanner: false,
-//       theme: ThemeData(
-//         primarySwatch: Colors.blue,
-//       ),
-//       home: const HomeWallpaper(),
-//     );
-//   }
-// }
-
-//! ===================== Barbar appointment design =============
-// import 'package:flutter/material.dart';
-
-// import '11/app/app.dart';
-
-// void main() {
-//   runApp(MyApp());
-// }
-
-//! =============================== Movie Application ==============
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:get/get.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
-import '12/app/app.dart';
+import '10_WallPaper_Project/utils/constants/const.dart';
+import '10_WallPaper_Project/view/home.dart';
 
-void main() {
-  runApp(const ProviderScope(child: MyApp()));
-  //providerScope makes sure that all providers we create are actually store in that container
-  // that means that any thing that we store or the providers we create can be access
-  // through any where in the app
+Future<void> main() async {
+  await Hive.initFlutter();
+  Hive.openBox<String>(downloadBox);
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GetMaterialApp(
+      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const HomeWallpaper(),
+    );
+  }
 }

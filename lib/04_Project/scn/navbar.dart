@@ -1,11 +1,13 @@
-import 'package:flutte_challange/04_Project/scn/settings.dart';
 import 'package:flutter/material.dart';
 
 import 'Profile.dart';
 import 'fav.dart';
 import 'home.dart';
+import 'settings.dart';
 
 class Navbar extends StatefulWidget {
+  const Navbar({Key? key}) : super(key: key);
+
   @override
   State<Navbar> createState() => _NavbarState();
 }
