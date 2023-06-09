@@ -14,7 +14,7 @@ const movieMock = Movie(
     backdropPath: '',
     posterPath: '');
 
-const gneresMock = [
+const genresMock = [
   Genre(name: 'Action'),
   Genre(name: 'Comedy'),
   Genre(name: 'Horror'),
@@ -35,7 +35,7 @@ class MovieFlowState {
     required this.pageController,
     this.ratings = 5,
     this.years = 10,
-    this.genres = gneresMock,
+    this.genres = genresMock,
     this.movie = movieMock,
   });
 

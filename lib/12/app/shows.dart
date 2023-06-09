@@ -2,7 +2,6 @@ import 'package:flutte_challange/12/app/app_flow_controller.dart';
 import 'package:flutte_challange/12/core/constants.dart';
 import 'package:flutte_challange/12/core/models/movie.dart';
 import 'package:flutte_challange/12/core/widgets/primary_button.dart';
-import 'package:flutte_challange/12/features/genre/genre.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

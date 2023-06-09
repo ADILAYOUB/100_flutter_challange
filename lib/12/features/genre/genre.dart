@@ -2,26 +2,24 @@
 //Model to get the data
 import 'package:flutter/material.dart';
 
+import 'genre_entity.dart';
+
 @immutable //unidirection data flow
 class Genre {
   final String name;
   final bool isSelected;
   final int id;
-  const Genre({
-    required this.name,
-    this.isSelected = false,
-    this.id = 0,
-  });
+  const Genre({required this.name, this.isSelected = false, this.id = 0});
+
+  factory Genre.fromEntity(GenreEntity entity) {
+    return Genre(name: entity.name, id: entity.id, isSelected: false);
+  }
 
   Genre toggleSelected() {
     // function return new instance of genre
     // this is one example where we integrate uni directionsl data flow
     // we are not mutating values directly we creat a copy
-    return Genre(
-      name: name,
-      id: id,
-      isSelected: !isSelected,
-    );
+    return Genre(name: name, id: id, isSelected: !isSelected);
   }
 
   //override toString
