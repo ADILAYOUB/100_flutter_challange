@@ -53,7 +53,16 @@ class YearScreen extends ConsumerWidget {
           ),
           const Spacer(),
           PrimaryButton(
-              onPressed: () => Navigator.of(context).push(ResultScreen.route()),
+              // let us call first the get request and then navigation request
+              onPressed: () async {
+                await ref
+                    .read(movieFlowControllerProvider.notifier)
+                    .getRecommendedMovie();
+                if (context.mounted) return;
+                Navigator.of(context).push(ResultScreen.route());
+              },
+              isLoading:
+                  ref.watch(movieFlowControllerProvider).movie is AsyncLoading,
               text: 'Find'),
           const SizedBox(height: kMediumSpacing)
         ],

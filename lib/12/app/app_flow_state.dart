@@ -3,40 +3,27 @@ import 'package:flutter/material.dart';
 
 import 'package:flutte_challange/12/core/models/movie.dart';
 import 'package:flutte_challange/12/features/genre/genre.dart';
-
-const movieMock = Movie(
-    title: 'The Hero',
-    overview:
-        'This is the overview of the movie The Hero based on the indian Super hero in the mist of war and terror in the country',
-    vote: 4.3,
-    genres: [Genre(name: 'Action'), Genre(name: 'Fantacy')],
-    releaseDate: '2019-10-12',
-    backdropPath: '',
-    posterPath: '');
-
-const genresMock = [
-  Genre(name: 'Action'),
-  Genre(name: 'Comedy'),
-  Genre(name: 'Horror'),
-  Genre(name: 'Anime'),
-  Genre(name: 'Drama'),
-  Genre(name: 'Family'),
-  Genre(name: 'Romance')
-];
+import 'package:riverpod/riverpod.dart';
+// through async values we can handle error cases when we have data as well as loading cases
 
 @immutable
 class MovieFlowState {
   final PageController pageController;
   final int ratings;
   final int years;
-  final List<Genre> genres;
-  final Movie movie;
+// this movie and Genre we are getting from the http request to the api
+// so first let us make them required also we can wrap them with async value type
+// to make them required we want to ass some moke values
+  final AsyncValue<List<Genre>> genres;
+  final AsyncValue<Movie> movie;
+
   const MovieFlowState({
     required this.pageController,
+    required this.genres,
+    required this.movie,
+    // and for the veriable we can wrap them with async type i.e AsyncValue (from riverpood)
     this.ratings = 5,
     this.years = 10,
-    this.genres = genresMock,
-    this.movie = movieMock,
   });
 
   //? create copy of these objects
@@ -47,8 +34,8 @@ class MovieFlowState {
       PageController? pageController,
       int? rating,
       int? year,
-      List<Genre>? genres,
-      Movie? movie}) {
+      AsyncValue<List<Genre>>? genres,
+      AsyncValue<Movie>? movie}) {
     // returns movie flow state instance (new)
     return MovieFlowState(
         pageController: pageController ?? this.pageController,

@@ -1,6 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
+import '../../app/app_entity.dart';
 import '../../features/genre/genre.dart';
 
 @immutable
@@ -32,6 +33,27 @@ class Movie {
         releaseDate = '',
         backdropPath = '',
         posterPath = '';
+
+  // import MovieEntity
+  // create a constructor
+  factory Movie.fromEntity(MovieEntity entity, List<Genre> genres) {
+    // return movie object with all necessery veriable maped to corresponding values
+    return Movie(
+        // map every
+        title: entity.title,
+        overview: entity.overview,
+        vote: entity.vote,
+        genres: genres
+            .where((genre) => entity.genreIds.contains(genre.id))
+            .toList(
+                growable:
+                    false), // as they come with the ids  therefore use where
+        releaseDate: entity.releaseDate,
+        backdropPath:
+            'https://image.tmdb.org/t/p/original/${entity.backdropPath}',
+        posterPath:
+            'https://image.tmdb.org/t/p/original/${entity.posterPath}'); // after this we are goind to use repository-service pattern
+  }
 
   String get genreSeperated => genres.map((e) => e.name).toList().join(',');
 

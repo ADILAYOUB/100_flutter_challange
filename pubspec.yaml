@@ -41,6 +41,7 @@ dependencies:
   #http: ^1.0.0
   riverpod: ^2.3.6
   flutter_riverpod: ^2.3.6
+  dio: ^5.2.0+1
 
 dev_dependencies:
   flutter_test:

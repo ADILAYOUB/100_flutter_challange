@@ -11,8 +11,6 @@ class GenreScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final refrence = ref.watch(movieFlowControllerProvider).genres;
-    final notifier = ref.watch(movieFlowControllerProvider.notifier);
     // let us define a theme
     final theme = Theme.of(context);
     return Scaffold(
@@ -30,21 +28,38 @@ class GenreScreen extends ConsumerWidget {
             textAlign: TextAlign.center,
           ),
           Expanded(
-              child: ListView.separated(
-            padding: const EdgeInsets.symmetric(vertical: kListItemSpacing),
-            itemCount: refrence.length,
-            itemBuilder: (context, index) {
-              final genre = refrence[index];
-              return ListCard(
-                genre: genre,
-                onTap: () => notifier.toggleSelected(genre),
-              );
-            },
-            separatorBuilder: (context, index) {
-              return const SizedBox(height: kListItemSpacing);
-            },
-          )),
-          PrimaryButton(onPressed: notifier.nextPage, text: 'Continue'),
+            child: ref.watch(movieFlowControllerProvider).genres.when(
+                  data: (genres) {
+                    return ListView.separated(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: kListItemSpacing),
+                      itemCount: genres.length,
+                      itemBuilder: (context, index) {
+                        final genre = genres[index];
+                        return ListCard(
+                          genre: genre,
+                          onTap: () => ref
+                              .watch(movieFlowControllerProvider.notifier)
+                              .toggleSelected(genre),
+                        );
+                      },
+                      separatorBuilder: (context, index) {
+                        return const SizedBox(height: kListItemSpacing);
+                      },
+                    );
+                  },
+                  loading: () => const Center(
+                    child: CircularProgressIndicator(),
+                  ),
+                  error: (error, stackTrace) {
+                    return const Text('Some Thing Went Wrong');
+                  },
+                ),
+          ),
+          PrimaryButton(
+              onPressed:
+                  ref.watch(movieFlowControllerProvider.notifier).nextPage,
+              text: 'Continue'),
           const SizedBox(
             height: kMediumSpacing,
           )

@@ -17,50 +17,68 @@ class ResultScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
 
-    return Scaffold(
-      appBar: AppBar(),
-      body: Column(children: [
-        Expanded(
-            child: ListView(
-          children: [
-            Stack(
-              clipBehavior: Clip.none,
-              children: [
-                const CoverImage(),
-                Positioned(
-                    width: MediaQuery.of(context)
-                        .size
-                        .width, // full width of the screen
-                    bottom: -(movieheight / 2), // push if further down
-                    child: MovieImageDetails(
-                      movie: ref.watch(movieFlowControllerProvider).movie,
-                      movieHeight: movieheight,
-                    )),
-              ],
-            ),
-            SizedBox(
-              height: movieheight / 2,
-            ),
-            Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Text(
-                ref.watch(movieFlowControllerProvider).movie.overview,
-                style: theme.textTheme.bodyMedium,
+    return ref.watch(movieFlowControllerProvider).movie.when(
+          data: (movie) {
+            return Scaffold(
+              appBar: AppBar(),
+              body: Column(
+                children: [
+                  Expanded(
+                      child: ListView(
+                    children: [
+                      Stack(
+                        clipBehavior: Clip.none,
+                        children: [
+                          CoverImage(
+                            movie: movie,
+                          ),
+                          Positioned(
+                              width: MediaQuery.of(context)
+                                  .size
+                                  .width, // full width of the screen
+                              bottom:
+                                  -(movieheight / 2), // push if further down
+                              child: MovieImageDetails(
+                                movie: movie,
+                                movieHeight: movieheight,
+                              )),
+                        ],
+                      ),
+                      SizedBox(
+                        height: movieheight / 2,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: Text(
+                          movie.overview,
+                          style: theme.textTheme.bodyMedium,
+                        ),
+                      )
+                    ],
+                  )),
+                  PrimaryButton(
+                      onPressed: () => Navigator.of(context).pop(),
+                      text: 'Find Another Movie '),
+                  const SizedBox(height: kMediumSpacing)
+                ],
               ),
-            )
-          ],
-        )),
-        PrimaryButton(
-            onPressed: () => Navigator.of(context).pop(),
-            text: 'Find Another Movie '),
-        const SizedBox(height: kMediumSpacing)
-      ]),
-    );
+            );
+          },
+          loading: () => const Scaffold(
+            body: Center(
+              child: CircularProgressIndicator(),
+            ),
+          ),
+          error: (e, s) {
+            return const Text("Something Went Wrong");
+          },
+        );
   }
 }
 
 class CoverImage extends StatelessWidget {
-  const CoverImage({super.key});
+  final Movie movie;
+  const CoverImage({required this.movie, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -69,22 +87,28 @@ class CoverImage extends StatelessWidget {
       constraints: const BoxConstraints(minHeight: 298), // wider devices
 
       child: ShaderMask(
-          shaderCallback: (rect) {
-            return LinearGradient(
-                //fade start at
-                begin: Alignment.center,
-                //and completes at
-                end: Alignment.bottomCenter,
-                //define colors of this linear gradent
-                colors: [
-                  Theme.of(context).scaffoldBackgroundColor,
-                  Colors.transparent,
-                ]).createShader(Rect.fromLTRB(
-                0, 0, rect.width, rect.height)); // for full shader mask size
+        shaderCallback: (rect) {
+          return LinearGradient(
+              //fade start at
+              begin: Alignment.center,
+              //and completes at
+              end: Alignment.bottomCenter,
+              //define colors of this linear gradent
+              colors: [
+                Theme.of(context).scaffoldBackgroundColor,
+                Colors.transparent,
+              ]).createShader(Rect.fromLTRB(
+              0, 0, rect.width, rect.height)); // for full shader mask size
+        },
+        blendMode: BlendMode.dstIn, // add the blend effect we are adding above
+        child: Image.network(
+          movie.backdropPath ?? '',
+          fit: BoxFit.cover,
+          errorBuilder: (context, e, s) {
+            return const SizedBox();
           },
-          blendMode:
-              BlendMode.dstIn, // add the blend effect we are adding above
-          child: const Placeholder()),
+        ),
+      ),
     );
   }
 }
@@ -102,7 +126,16 @@ class MovieImageDetails extends ConsumerWidget {
       padding: const EdgeInsets.symmetric(horizontal: 24.0),
       child: Row(
         children: [
-          SizedBox(width: 100, height: movieHeight, child: const Placeholder()),
+          SizedBox(
+              width: 100,
+              height: movieHeight,
+              child: Image.network(
+                movie.posterPath ?? '',
+                fit: BoxFit.cover,
+                errorBuilder: (context, e, s) {
+                  return const SizedBox();
+                },
+              )),
           const SizedBox(
             width: kMediumSpacing,
           ),
