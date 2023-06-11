@@ -41,14 +41,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.17.1"
+  cupertino_icons:
+    dependency: "direct main"
+    description:
+      name: cupertino_icons
+      sha256: e35129dc44c9118cee2a5603506d823bab99c68393879edb440e0090d07586be
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.5"
   dio:
     dependency: "direct main"
     description:
       name: dio
-      sha256: b99b1d56dc0d5dece70957023af002dbd49614b4a1bf86d3a254af3fe781bdf2
+      sha256: "7d328c4d898a61efc3cd93655a0955858e29a0aa647f0f9e02d59b3bb275e2e8"
       url: "https://pub.dev"
     source: hosted
-    version: "5.2.0+1"
+    version: "4.0.6"
   fake_async:
     dependency: transitive
     description:
@@ -74,10 +82,10 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_riverpod
-      sha256: b83ac5827baadefd331ea1d85110f34645827ea234ccabf53a655f41901a9bf4
+      sha256: d84e180f039a6b963e610d2e4435641fdfe8f12437e8770e963632e05af16d80
       url: "https://pub.dev"
     source: hosted
-    version: "2.3.6"
+    version: "1.0.4"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -131,6 +139,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.9.1"
+  multiple_result:
+    dependency: "direct main"
+    description:
+      name: multiple_result
+      sha256: "8dbaf0e51a93ffe8fb9aaf791f3aaa21966dac489bd146fa58da40860fd1ce7b"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.4"
   path:
     dependency: transitive
     description:
@@ -140,13 +156,13 @@ packages:
     source: hosted
     version: "1.8.3"
   riverpod:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: riverpod
-      sha256: "80e48bebc83010d5e67a11c9514af6b44bbac1ec77b4333c8ea65dbc79e2d8ef"
+      sha256: e7f097159b9512f5953ff544164c19057f45ce28fd0cb971fc4cad1f7b28217d
       url: "https://pub.dev"
     source: hosted
-    version: "2.3.6"
+    version: "1.0.3"
   sky_engine:
     dependency: transitive
     description: flutter

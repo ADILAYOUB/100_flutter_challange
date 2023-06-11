@@ -1,55 +1,57 @@
+import 'package:flutte_challange/12/theme/palette.dart';
 import 'package:flutter/material.dart';
-import '../theme/color.dart';
 
 class CustomTheme {
   static ThemeData darkTheme(BuildContext context) {
-    // this will return a dark theme data
-
-    //This line gets the current theme from the context and assigns it to a variable called theme.
     final theme = Theme.of(context);
-
     return ThemeData(
-        //this app is going to be in dartk mode
-        brightness: Brightness.dark, //sets the app in dark mode.
+      colorScheme: ColorScheme.fromSwatch(
+        brightness: Brightness.dark,
         primarySwatch: MaterialColor(
-          ColorPalette.red5.value, // color scheme fromSwatch
+          Palette.red500.value,
           const {
-            100: ColorPalette.red1,
-            200: ColorPalette.red2,
-            300: ColorPalette.red3,
-            400: ColorPalette.red4,
-            500: ColorPalette.red5,
-            600: ColorPalette.red6,
-            700: ColorPalette.red7,
-            800: ColorPalette.red8,
-            900: ColorPalette.red9,
+            100: Palette.red100,
+            200: Palette.red200,
+            300: Palette.red300,
+            400: Palette.red400,
+            500: Palette.red500,
+            600: Palette.red600,
+            700: Palette.red700,
+            800: Palette.red800,
+            900: Palette.red900,
           },
         ),
-        scaffoldBackgroundColor: ColorPalette.black,
-        primaryColor: ColorPalette.red5,
-        appBarTheme: const AppBarTheme(
-          elevation: 0,
-          color: ColorPalette.black,
-        ),
-        sliderTheme: const SliderThemeData(
-            activeTrackColor: ColorPalette.red5,
-            inactiveTrackColor: ColorPalette.red3,
-            thumbColor: ColorPalette.red2,
-            valueIndicatorColor: ColorPalette.red6,
-            inactiveTickMarkColor: Colors.amber,
-            activeTickMarkColor: Colors.transparent),
-        textTheme: theme.primaryTextTheme
-            .copyWith(
-                labelLarge: theme.primaryTextTheme.labelLarge?.copyWith(
-                    color: Colors.white,
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold))
-            .apply(
-              displayColor: Colors.white,
+        accentColor: Palette.red500,
+      ),
+      scaffoldBackgroundColor: Palette.almostBlack,
+      appBarTheme: const AppBarTheme(
+        elevation: 0,
+        color: Palette.almostBlack,
+      ),
+      sliderTheme: SliderThemeData(
+        activeTrackColor: Colors.white,
+        inactiveTrackColor: Colors.grey.shade800,
+        thumbColor: Colors.white,
+        valueIndicatorColor: Palette.red500,
+        inactiveTickMarkColor: Colors.transparent,
+        activeTickMarkColor: Colors.transparent,
+      ),
+      textTheme: theme.primaryTextTheme
+          .copyWith(
+            labelLarge: theme.primaryTextTheme.labelLarge?.copyWith(
+              color: Colors.white,
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
             ),
-        textButtonTheme: TextButtonThemeData(
-            style: TextButton.styleFrom(
-          backgroundColor: ColorPalette.red5,
-        )));
+          )
+          .apply(
+            displayColor: Colors.white,
+          ),
+      textButtonTheme: TextButtonThemeData(
+        style: TextButton.styleFrom(
+          backgroundColor: Palette.red500,
+        ),
+      ),
+    );
   }
 }

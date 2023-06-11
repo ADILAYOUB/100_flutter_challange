@@ -1,9 +1,14 @@
-import 'package:flutte_challange/12/core/constants.dart';
-import 'package:flutte_challange/12/features/genre/genre.dart';
 import 'package:flutter/material.dart';
 
+import '../../../core/constants.dart';
+import 'genre.dart';
+
 class ListCard extends StatelessWidget {
-  const ListCard({super.key, required this.genre, required this.onTap});
+  const ListCard({
+    Key? key,
+    required this.genre,
+    required this.onTap,
+  }) : super(key: key);
 
   final Genre genre;
   final VoidCallback onTap;
@@ -11,7 +16,6 @@ class ListCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return UnconstrainedBox(
-      // bec we want set the sizing of the of the list card independent of the list view
       child: Material(
         color: genre.isSelected
             ? Theme.of(context).colorScheme.primary
