@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "692335704891",
+    "project_id": "adilayoubchatapplication",
+    "storage_bucket": "adilayoubchatapplication.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:692335704891:android:9a57257012c1268fabd51e",
+        "android_client_info": {
+          "package_name": "com.example.eng"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "692335704891-hqlqlgvrts5unf4ogu6alqnjg977of4t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-W8XgFcNFII9oWC4q6wbHk_9svFW0uDk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "692335704891-hqlqlgvrts5unf4ogu6alqnjg977of4t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
