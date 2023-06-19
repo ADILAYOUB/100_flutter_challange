@@ -17,11 +17,13 @@ class _HomeScreenState extends State<HomeScreen> {
   String url =
       'https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=100&page=1&sparkline=false&locale=en';
   bool isDarkMode = AppTheme.isDarkModeEnabled;
-
+  late Future<List<CoinDetails>> futureCoinDetail;
+  List<CoinDetails> coinDetailsList = [];
+  bool isSearchResult = true;
   @override
   void initState() {
     super.initState();
-    getCoinDetails();
+    futureCoinDetail = getCoinDetails();
   }
 
   Future<List<CoinDetails>> getCoinDetails() async {
@@ -71,52 +73,72 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
         centerTitle: true,
       ),
-      body: SizedBox(
-        child: Column(
-          children: [
-            Padding(
-              padding:
-                  const EdgeInsets.symmetric(vertical: 18.0, horizontal: 18.0),
-              child: TextField(
-                decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.search,
-                      color: isDarkMode
-                          ? Colors.black
-                          : Colors.white), // Set the color of the prefix icon
-                  border: OutlineInputBorder(
-                    borderRadius: const BorderRadius.all(Radius.circular(14.0)),
-                    borderSide: BorderSide(
-                        color: isDarkMode
-                            ? Colors.red
-                            : Colors.blue), // Set the color of the border
+      body: FutureBuilder(
+        future: futureCoinDetail,
+        builder: (context, AsyncSnapshot<List<CoinDetails>> snapshot) {
+          if (snapshot.hasData) {
+            if (isSearchResult) {
+              coinDetailsList = snapshot.data!;
+              isSearchResult = false;
+            }
+            return Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                      vertical: 18.0, horizontal: 18.0),
+                  child: TextField(
+                    onChanged: (query) {
+                      List<CoinDetails> searchResult = snapshot.data!.where(
+                        (element) {
+                          String coinName = element.name!;
+                          bool isPresent = coinName.contains(query);
+                          return isPresent;
+                        },
+                      ).toList();
+                      setState(() {
+                        coinDetailsList = searchResult;
+                      });
+                    },
+                    decoration: InputDecoration(
+                      prefixIcon: Icon(Icons.search,
+                          color: isDarkMode
+                              ? Colors.black
+                              : Colors
+                                  .white), // Set the color of the prefix icon
+                      border: OutlineInputBorder(
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(14.0)),
+                        borderSide: BorderSide(
+                            color: isDarkMode
+                                ? Colors.red
+                                : Colors.blue), // Set the color of the border
+                      ),
+                      hintText: 'Search Coin',
+                      hintStyle: TextStyle(
+                          color: isDarkMode ? Colors.black : Colors.white),
+                    ),
                   ),
-                  hintText: 'Search Coin',
-                  hintStyle: TextStyle(
-                      color: isDarkMode ? Colors.black : Colors.white),
                 ),
-              ),
-            ),
-            Expanded(
-              child: FutureBuilder(
-                future: getCoinDetails(),
-                builder: (context, AsyncSnapshot<List<CoinDetails>> snapshot) {
-                  if (snapshot.hasData) {
-                    return ListView.builder(
-                      itemCount: snapshot.data!.length,
-                      itemBuilder: ((context, index) {
-                        return coinDetail(snapshot.data![index]);
-                      }),
-                    );
-                  } else {
-                    return const Center(
-                      child: Text('No Data'),
-                    );
-                  }
-                },
-              ),
-            ),
-          ],
-        ),
+                Expanded(
+                  child: coinDetailsList.isEmpty
+                      ? const Center(
+                          child: Text('Not Coin Found'),
+                        )
+                      : ListView.builder(
+                          itemCount: coinDetailsList.length,
+                          itemBuilder: ((context, index) {
+                            return coinDetail(coinDetailsList[index]);
+                          }),
+                        ),
+                ),
+              ],
+            );
+          } else {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          }
+        },
       ),
     );
   }
