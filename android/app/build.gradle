@@ -41,10 +41,15 @@ android {
         main.java.srcDirs += 'src/main/kotlin'
     }
 
+        // Add the lintOptions block
+    lintOptions {
+        warning 'unchecked'
+    }
+
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.example.eng"
-        minSdkVersion flutter.minSdkVersion
+        minSdkVersion 21
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
