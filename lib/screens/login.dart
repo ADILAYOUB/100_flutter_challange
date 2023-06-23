@@ -1,6 +1,8 @@
 import 'package:flutte_challange/services/auth.dart';
 import 'package:flutter/material.dart';
 
+import '../shared/constants.dart';
+
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -9,12 +11,6 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  Color backgroundColor = const HSLColor.fromAHSL(
-    1.0, // Alpha value (1.0 for fully opaque)
-    18, // Hue value (from 0 to 360)
-    0.8696, // Saturation value (from 0.0 to 1.0)
-    0.9098, // Lightness value (from 0.0 to 1.0)
-  ).toColor();
   bool isLoading = false;
   @override
   Widget build(BuildContext context) {
@@ -48,14 +44,16 @@ class _LoginScreenState extends State<LoginScreen> {
                 const SizedBox(height: 24),
                 isLoading
                     ? const Center(
-                        child: CircularProgressIndicator(),
+                        child: CircularProgressIndicator(
+                          color: Colors.white,
+                        ),
                       )
                     : ElevatedButton.icon(
                         onPressed: () async {
                           setState(() {
                             isLoading = true;
                           });
-                          bool auth = await UserAuth().signInWithGoogle();
+                          bool auth = await UserAuth().handleSignInWithGoogle();
                           if (!auth) {
                             setState(() {
                               isLoading = false;
