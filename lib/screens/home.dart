@@ -62,13 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
       drawer: DrawerWidget(
         userId: widget.userId,
       ), // Pass the actual user ID
-      body: Center(
-          child: ElevatedButton(
-        onPressed: () async {
-          await UserAuth().googlSignOut();
-        },
-        child: const Text('Sign Out'),
-      )),
+      body: Center(),
     );
   }
 }

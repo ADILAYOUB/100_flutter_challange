@@ -1,29 +1,19 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutte_challange/screens/profile.dart';
 import 'package:flutter/material.dart';
+
+import '../../services/auth.dart';
+import '../get_user_data.dart';
 
 class DrawerWidget extends StatelessWidget {
   final String userId; // Pass the userId to the widget
 
   const DrawerWidget({super.key, required this.userId});
 
-  Future<Map<String, dynamic>?> getUserData() async {
-    // Retrieve user data from Firebase Firestore
-    final userDoc =
-        await FirebaseFirestore.instance.collection('users').doc(userId).get();
-
-    if (userDoc.exists) {
-      return userDoc.data();
-    } else {
-      return null;
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Drawer(
       child: FutureBuilder<Map<String, dynamic>?>(
-        future: getUserData(),
+        future: GetUserData().getUserData(userId),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(child: CircularProgressIndicator());
@@ -34,45 +24,40 @@ class DrawerWidget extends StatelessWidget {
           }
 
           final userData = snapshot.data;
-
           return ListView(
             padding: EdgeInsets.zero,
             children: [
-              DrawerHeader(
-                decoration: const BoxDecoration(
-                  color: Colors.blue,
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(
-                      'Welcome',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 24,
-                      ),
-                    ),
-                    const SizedBox(height: 8),
-                    userData != null
-                        ? Text(
-                            userData['fullName'],
-                            style: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 16,
-                            ),
-                          )
-                        : const Text('User'),
-                    const SizedBox(height: 8),
-                    userData != null
-                        ? Text(
-                            userData['email'],
-                            style: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 16,
-                            ),
-                          )
-                        : const Text('email'),
-                  ],
+              UserAccountsDrawerHeader(
+                accountName: userData != null
+                    ? Text(
+                        userData['fullName'],
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                        ),
+                      )
+                    : const Text('User'),
+                accountEmail: userData != null
+                    ? Text(
+                        userData['email'],
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                        ),
+                      )
+                    : const Text('email@mail.com'),
+                currentAccountPicture: CircleAvatar(
+                  backgroundColor:
+                      userData != null ? Colors.transparent : Colors.grey,
+                  // Set a default background color if userData is null
+                  backgroundImage: userData != null
+                      ? NetworkImage(userData['profilePic'])
+                      : null, // Set the background image only if userData is not null
+                  child: userData == null
+                      ? const Icon(Icons.person)
+                      // Show an icon if userData is null
+                      : null,
+                  // Set child to null if userData is not null
                 ),
               ),
               ListTile(
@@ -84,11 +69,18 @@ class DrawerWidget extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const ProfileScreen()),
+                        builder: (context) => ProfileScreen(userId: userId)),
                   );
                 },
               ),
-              // Add more list tiles for other drawer options
+              ListTile(
+                leading: const Icon(Icons.exit_to_app_sharp,
+                    size: 32, color: Colors.pinkAccent),
+                title: const Text('Sign'),
+                onTap: () async {
+                  await UserAuth().googlSignOut();
+                },
+              ),
             ],
           );
         },
