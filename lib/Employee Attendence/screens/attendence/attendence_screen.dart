@@ -152,10 +152,13 @@ class _EmpAttendanceScreenState extends State<EmpAttendanceScreen> {
                 controller.reset(); //resets the slider
               },
               child: Text(
-                  attendanceService.attendanceModel?.checkIn == null
-                      ? 'Slide to CheckIn'
-                      : 'Slide to CheckOut',
-                  style: const TextStyle(color: Colors.black, fontSize: 16)),
+                attendanceService.attendanceModel?.checkIn == null
+                    ? 'Slide to CheckIn'
+                    : attendanceService.attendanceModel?.checkOut == null
+                        ? 'Slide to CheckOut'
+                        : 'Checkout done for today',
+                style: const TextStyle(color: Colors.black, fontSize: 16),
+              ),
             ),
           ],
         ),
