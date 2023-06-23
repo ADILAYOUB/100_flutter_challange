@@ -33,6 +33,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.11.0"
+  bloc:
+    dependency: transitive
+    description:
+      name: bloc
+      sha256: "6f1b87b6eca9041d5672b6e29273cd1594db48ebb66fd2471066e9f3c3a516bd"
+      url: "https://pub.dev"
+    source: hosted
+    version: "7.2.1"
   boolean_selector:
     dependency: transitive
     description:
@@ -93,10 +101,10 @@ packages:
     dependency: "direct main"
     description:
       name: dio
-      sha256: a9d76e72985d7087eb7c5e7903224ae52b337131518d127c554b9405936752b8
+      sha256: "3866d67f93523161b643187af65f5ac08bc991a5bcdaf41a2d587fe4ccb49993"
       url: "https://pub.dev"
     source: hosted
-    version: "5.2.1+1"
+    version: "5.3.0"
   fake_async:
     dependency: transitive
     description:
@@ -125,10 +133,10 @@ packages:
     dependency: "direct main"
     description:
       name: firebase_auth
-      sha256: "87216661b409575ecb1a7849da38604a0abfcb6497146b66d4832cb97a4c9e0f"
+      sha256: acfbe55bc23e94ccc7228b7fc7b9abc0005597c1de226f6e3a0103ac29728fbe
       url: "https://pub.dev"
     source: hosted
-    version: "4.7.0"
+    version: "4.7.1"
   firebase_auth_platform_interface:
     dependency: transitive
     description:
@@ -141,10 +149,10 @@ packages:
     dependency: transitive
     description:
       name: firebase_auth_web
-      sha256: c74c5753855896b31536b9e151e34bf7eea143f0d9c209947b5f7ddc8e111989
+      sha256: "2e694a612a0739c0cf5f426d515dda37ee5827bab211d16e76bcad6a082925eb"
       url: "https://pub.dev"
     source: hosted
-    version: "5.6.0"
+    version: "5.6.1"
   firebase_core:
     dependency: "direct main"
     description:
@@ -174,6 +182,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_bloc:
+    dependency: "direct main"
+    description:
+      name: flutter_bloc
+      sha256: cdd1351ced09eeb46cfa7946e095b7679344af927415ca9cd972928fa6d5b23f
+      url: "https://pub.dev"
+    source: hosted
+    version: "7.3.3"
   flutter_dotenv:
     dependency: "direct main"
     description:
@@ -252,10 +268,10 @@ packages:
     dependency: transitive
     description:
       name: gotrue
-      sha256: "36a8e7120b93bdc5f9013ae878e40f928bc5b451eeb43bd307b619a566db5ac2"
+      sha256: c816f23e73cc8bd92f60d7d2332e4962f8b614e9a66d6a800a3c1231021d12ba
       url: "https://pub.dev"
     source: hosted
-    version: "1.11.0"
+    version: "1.11.1"
   hive:
     dependency: transitive
     description:
@@ -404,10 +420,10 @@ packages:
     dependency: "direct main"
     description:
       name: multiple_result
-      sha256: "9aba99bd75f28ac6519980580636348c0327e225d950a239fa59d2d983af4ce4"
+      sha256: a7a8aa7a068648521ebd41e8c7296a990cd7ec5e15e7efa210c26fefd6e4f193
       url: "https://pub.dev"
     source: hosted
-    version: "5.0.0"
+    version: "5.1.0"
   nested:
     dependency: transitive
     description:
@@ -516,10 +532,10 @@ packages:
     dependency: transitive
     description:
       name: postgrest
-      sha256: "1c385f2e5be70ab0a083efe723410d6e8b9c660edbfaf823c1b75d48ba0a5c66"
+      sha256: "6a0f28f33af4582a9874ce15520531280d39831f356f9740839ec142fc8deeff"
       url: "https://pub.dev"
     source: hosted
-    version: "1.3.3"
+    version: "1.4.0"
   provider:
     dependency: "direct main"
     description:
@@ -532,10 +548,10 @@ packages:
     dependency: transitive
     description:
       name: realtime_client
-      sha256: "0342f73f42345f3547e3cdcc804a0ed108fcd9142d1537d159aead94a213e248"
+      sha256: "5428b673dc373b6b834f52dda5a9a92e18eeafaa5171565540b87c8fe0d100cb"
       url: "https://pub.dev"
     source: hosted
-    version: "1.1.1"
+    version: "1.1.2"
   retry:
     dependency: transitive
     description:
@@ -729,18 +745,18 @@ packages:
     dependency: transitive
     description:
       name: supabase
-      sha256: "749e23b99ccf3e5034df8caeb5398ed4b18bf5474ed567f5556b5f4027532ee2"
+      sha256: "48c0e8e05f1c6da10b9f220804bf88ec7ded82901e3abb3e2d94e7db8a4ba1cd"
       url: "https://pub.dev"
     source: hosted
-    version: "1.9.7"
+    version: "1.9.8"
   supabase_flutter:
     dependency: "direct main"
     description:
       name: supabase_flutter
-      sha256: "50e70b46ba421ff227f7e6671c91ddf92ae088aeb9921dcf18aa4a6f532a5d29"
+      sha256: "47de0565e1c2bb5ce51b85bd61847222069bdf8963755838d20029206d30012c"
       url: "https://pub.dev"
     source: hosted
-    version: "1.10.9"
+    version: "1.10.10"
   synchronized:
     dependency: transitive
     description:
@@ -793,10 +809,10 @@ packages:
     dependency: transitive
     description:
       name: url_launcher_android
-      sha256: "15f5acbf0dce90146a0f5a2c4a002b1814a6303c4c5c075aa2623b2d16156f03"
+      sha256: "78cb6dea3e93148615109e58e42c35d1ffbf5ef66c44add673d0ab75f12ff3af"
       url: "https://pub.dev"
     source: hosted
-    version: "6.0.36"
+    version: "6.0.37"
   url_launcher_ios:
     dependency: transitive
     description:
@@ -873,10 +889,10 @@ packages:
     dependency: transitive
     description:
       name: webview_flutter_android
-      sha256: "27ad6a99c4b2d5e1ffd2b993a10f738b6b4979f139b4d64c34ac511595fcd748"
+      sha256: "8587d0b4991bd0f223f4b4957101c2c7449f905601571315f4967072498dd3fb"
       url: "https://pub.dev"
     source: hosted
-    version: "3.9.0"
+    version: "3.9.1"
   webview_flutter_platform_interface:
     dependency: transitive
     description:
@@ -889,18 +905,18 @@ packages:
     dependency: transitive
     description:
       name: webview_flutter_wkwebview
-      sha256: "369fdf6160944a7db660ff15fa048c2bd681b09557907beaef1f95e8557d21dc"
+      sha256: "3e36a8f564809cb7c257ff4278502b185e2191349df0ddee98837f91805c74b8"
       url: "https://pub.dev"
     source: hosted
-    version: "3.7.0"
+    version: "3.7.1"
   win32:
     dependency: transitive
     description:
       name: win32
-      sha256: dfdf0136e0aa7a1b474ea133e67cb0154a0acd2599c4f3ada3b49d38d38793ee
+      sha256: f2add6fa510d3ae152903412227bda57d0d5a8da61d2c39c1fb022c9429a41c0
       url: "https://pub.dev"
     source: hosted
-    version: "5.0.5"
+    version: "5.0.6"
   xdg_directories:
     dependency: transitive
     description:
