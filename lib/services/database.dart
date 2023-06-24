@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutte_challange/models/user.dart';
 
+import '../models/group.dart';
+
 class DatabaseService {
   DatabaseService({required this.userId});
   final String? userId;
@@ -51,4 +53,32 @@ class DatabaseService {
   //   UserModel userModel = UserModel.fromJson(result);
   //   return userModel;
   // }
+
+  // Creating new Group
+
+  Future createGroup(String groupName) async {
+    DocumentReference doc = await groupCollection.add({
+      'groupId': '',
+      'groupName': groupName,
+      'groupIcon': '',
+      'admin': userId,
+      'members': [userId],
+      'recentMessage': '',
+      'recentMessageSender': '',
+      'public': true,
+    });
+    // update
+    await groupCollection.doc(doc.id).update({
+      'groupId': doc.id,
+    });
+  }
+
+  // fetch all the groups joined by the user
+  Stream<List<GroupModel>> fetchJoinedGroup() async* {
+    yield* groupCollection
+        .where('members', arrayContains: userId)
+        .snapshots()
+        .map((group) =>
+            group.docs.map((group) => GroupModel.fromJson(group)).toList());
+  }
 }
