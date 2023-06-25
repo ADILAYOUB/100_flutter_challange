@@ -76,7 +76,7 @@ class DrawerWidget extends StatelessWidget {
               ListTile(
                 leading: const Icon(Icons.exit_to_app_sharp,
                     size: 32, color: Colors.pinkAccent),
-                title: const Text('Sign'),
+                title: const Text('Sign Out'),
                 onTap: () async {
                   await UserAuth().googlSignOut();
                 },
