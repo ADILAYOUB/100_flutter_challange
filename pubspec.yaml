@@ -54,7 +54,8 @@ dependencies:
   flutter_dotenv: ^5.1.0
   action_slider: ^0.6.1
   intl: ^0.18.1
-
+  simple_month_year_picker: ^1.0.5
+  location: ^5.0.1
 dev_dependencies:
   flutter_test:
     sdk: flutter
