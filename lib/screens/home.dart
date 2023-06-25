@@ -1,3 +1,5 @@
+import 'package:flutte_challange/models/group.dart';
+import 'package:flutte_challange/screens/chat.dart';
 import 'package:flutte_challange/screens/search.dart';
 import 'package:flutte_challange/services/database.dart';
 import 'package:flutter/material.dart';
@@ -69,7 +71,7 @@ class _HomeScreenState extends State<HomeScreen> {
       drawer: DrawerWidget(
         userId: widget.userId,
       ), // Pass the actual user ID
-      body: const Center(),
+
       floatingActionButton: FloatingActionButton(
         elevation: 12,
         backgroundColor: backgroundColor,
@@ -99,6 +101,24 @@ class _HomeScreenState extends State<HomeScreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
+                        OutlinedButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          style: OutlinedButton.styleFrom(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20.0),
+                            ),
+                            side: const BorderSide(
+                              color: Colors.pinkAccent,
+                              width: 2.0,
+                            ),
+                          ),
+                          child: const Text(
+                            'Cancel',
+                            style: TextStyle(color: Colors.red),
+                          ),
+                        ),
                         OutlinedButton(
                           onPressed: () async {
                             if (groupController.text.isNotEmpty) {
@@ -130,24 +150,6 @@ class _HomeScreenState extends State<HomeScreen> {
                             style: TextStyle(color: Colors.red),
                           ),
                         ),
-                        OutlinedButton(
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                          style: OutlinedButton.styleFrom(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20.0),
-                            ),
-                            side: const BorderSide(
-                              color: Colors.pinkAccent,
-                              width: 2.0,
-                            ),
-                          ),
-                          child: const Text(
-                            'Cancel',
-                            style: TextStyle(color: Colors.red),
-                          ),
-                        ),
                       ],
                     ),
                   ],
@@ -160,6 +162,52 @@ class _HomeScreenState extends State<HomeScreen> {
           color: Colors.pinkAccent,
         ),
       ),
+
+      body: StreamBuilder(
+          stream: DatabaseService(userId: widget.userId).fetchJoinedGroup(),
+          builder: (context, AsyncSnapshot snapshot) {
+            if (snapshot.hasData) {
+              if (snapshot.data.length == 0) {
+                return const Center(
+                  child: Text(
+                      'No Group Joined \n Either Search or Join the Group'),
+                );
+              }
+              return ListView.builder(
+                itemCount: snapshot.data.length,
+                reverse: true,
+                shrinkWrap: true,
+                itemBuilder: (context, index) {
+                  GroupModel groupData = snapshot.data[index];
+                  bool isAdmin = groupData.admin == widget.userId;
+                  return ListTile(
+                    leading: CircleAvatar(
+                      backgroundColor: backgroundColor,
+                      child: Text(
+                          groupData.groupName.substring(0, 1).toUpperCase()),
+                    ),
+                    title: Text(groupData.groupName),
+                    subtitle: groupData.recentMessage == ''
+                        ? const Text('Start Conversation')
+                        : Text(groupData.recentMessage),
+                    trailing: isAdmin
+                        ? const Icon(Icons.person)
+                        : const Icon(Icons.chat),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ChatScreen(
+                                groupModel: groupData, userId: widget.userId),
+                          ));
+                    },
+                  );
+                },
+              );
+            }
+
+            return const LinearProgressIndicator();
+          }),
     );
   }
 }

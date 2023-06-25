@@ -32,7 +32,7 @@ class DatabaseService {
   }
 
   // Get user data
-  Future<UserModel> getUser(String? userDocId) async {
+  Future<UserModel> getUser([String? userDocId]) async {
     DocumentSnapshot user = await userCollection.doc(userDocId ?? userId).get();
     if (!user.exists) {
       await Future.delayed(const Duration(seconds: 1));
@@ -78,7 +78,30 @@ class DatabaseService {
     yield* groupCollection
         .where('members', arrayContains: userId)
         .snapshots()
-        .map((group) =>
-            group.docs.map((group) => GroupModel.fromJson(group)).toList());
+        .map((groups) =>
+            groups.docs.map((group) => GroupModel.fromJson(group)).toList());
+  }
+
+  // join group
+
+  Future<void> joinGroup(String groupId) async {
+    await groupCollection.doc(groupId).update(
+      {
+        'members': FieldValue.arrayUnion(
+          [userId],
+        ),
+      },
+    );
+  }
+
+  // Exite Group
+  Future<void> exitGroup(String groupId) async {
+    await groupCollection.doc(groupId).update(
+      {
+        'members': FieldValue.arrayRemove(
+          [userId],
+        ),
+      },
+    );
   }
 }
