@@ -26,8 +26,12 @@ class _GroupInfoScreenState extends State<GroupInfoScreen> {
       appBar: AppBar(
         centerTitle: true,
         elevation: 0,
-        title: Text(widget.groupModel.groupName),
+        title: Text(
+          widget.groupModel.groupName,
+          style: const TextStyle(color: Colors.pinkAccent),
+        ),
         backgroundColor: backgroundColor,
+        iconTheme: const IconThemeData(color: Colors.pink),
         actions: [
           IconButton(
             onPressed: () async {
@@ -107,12 +111,13 @@ class _GroupInfoScreenState extends State<GroupInfoScreen> {
         itemBuilder: (context, index) {
           String member = widget.groupModel.members[index];
           return FutureBuilder(
-            future: DatabaseService(userId: member).getUser(),
+            future: DatabaseService(userId: member).getUserData(),
             builder: (context, snapshot) {
               if (snapshot.hasData) {
                 // data  will be uerdata model data type
                 UserModel userData = snapshot.data!;
                 bool isAdmin = userData.userId == widget.groupModel.admin;
+
                 return ListTile(
                   leading: CircleAvatar(
                     backgroundColor: backgroundColor,

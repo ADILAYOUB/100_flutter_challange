@@ -35,7 +35,8 @@ class ProfileScreenState extends State<ProfileScreen> {
       appBar: AppBar(
         title: const Text(
           'Profile Detail',
-          style: TextStyle(fontSize: 20, letterSpacing: 2, color: Colors.black),
+          style: TextStyle(
+              fontSize: 20, letterSpacing: 2, color: Colors.pinkAccent),
         ),
         iconTheme: const IconThemeData(color: Colors.pink),
         centerTitle: true,

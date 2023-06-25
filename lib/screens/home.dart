@@ -56,7 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const SearchScreen(),
+                  builder: (context) => SearchScreen(userId: widget.userId),
                 ),
               );
             },
@@ -129,8 +129,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 Navigator.pop(context);
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   const SnackBar(
-                                    content:
-                                        Text("Grtoup Created Successfully"),
+                                    content: Text("Group Created Successfully"),
                                   ),
                                 );
                               }
@@ -169,8 +168,8 @@ class _HomeScreenState extends State<HomeScreen> {
             if (snapshot.hasData) {
               if (snapshot.data.length == 0) {
                 return const Center(
-                  child: Text(
-                      'No Group Joined \n Either Search or Join the Group'),
+                  child:
+                      Text('No Group Joined \nEither Search or Join the Group'),
                 );
               }
               return ListView.builder(
@@ -205,7 +204,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
               );
             }
-
             return const LinearProgressIndicator();
           }),
     );
