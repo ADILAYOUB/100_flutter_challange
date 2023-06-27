@@ -52,7 +52,8 @@ dependencies:
   iconly: ^1.0.1
   supabase_flutter: ^1.10.9
   flutter_dotenv: ^5.1.0
-
+  action_slider: ^0.6.1
+  intl: ^0.18.1
 
 dev_dependencies:
   flutter_test:

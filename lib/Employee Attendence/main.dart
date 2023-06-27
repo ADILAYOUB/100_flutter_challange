@@ -3,6 +3,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:provider/provider.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
+import 'screens/attendence/attendance_service.dart';
 import 'screens/splash_screen.dart';
 import 'services/auth_services.dart';
 import 'services/database_service.dart';
@@ -27,6 +28,7 @@ class EmpApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (context) => AuthService()),
         ChangeNotifierProvider(create: (context) => DatabaseService()),
+        ChangeNotifierProvider(create: (context) => AttendanceService()),
       ],
       child: MaterialApp(
         darkTheme: ThemeData.dark(

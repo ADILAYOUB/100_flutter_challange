@@ -27,7 +27,7 @@ class _EmpHomeScreenState extends State<EmpHomeScreen> {
         index: currentIndex,
         children: const [
           EmpCalenderScreen(),
-          EmpAttendenceScreen(),
+          EmpAttendanceScreen(),
           EmpProfileScreen(),
         ],
       ),
