@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // ignore_for_file: prefer_const_constructors
 
 //// ==================================================================
@@ -191,7 +190,6 @@
 // }
 
 //! =================  airbnb book opeining ui   ====================================
-
 import 'package:flutte_challange/16_airbnb_book_opning_ui/lib/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -199,12 +197,6 @@ import 'package:flutter/services.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
-=======
-import 'package:eng/11_sqlite_CRUD_operation/screen/home.dart';
-import 'package:flutter/material.dart';
-
-void main() {
->>>>>>> Day_11
   runApp(const MyApp());
 }
 
@@ -241,11 +233,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-<<<<<<< HEAD
       title: 'Flutter Airbnb Book Flip Interaction',
-=======
-      title: 'Flutter Demo',
->>>>>>> Day_11
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         appBarTheme: const AppBarTheme(
@@ -253,11 +241,7 @@ class _MyAppState extends State<MyApp> {
         ),
         primarySwatch: Colors.blue,
       ),
-<<<<<<< HEAD
       home: const HomePage(),
-=======
-      home: const Sqflite(),
->>>>>>> Day_11
     );
   }
 }
