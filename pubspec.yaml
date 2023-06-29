@@ -38,9 +38,17 @@ dependencies:
   provider: ^6.0.5
   get: ^4.6.5
   hive_flutter: ^1.1.0
+<<<<<<< HEAD
   http: ^1.0.0
   riverpod: ^2.3.6
   flutter_riverpod: ^2.3.6
+=======
+  path_provider: ^2.0.11
+  sqflite: ^2.0.3+1
+
+
+  
+>>>>>>> Day_11
 
 dev_dependencies:
   flutter_test:
