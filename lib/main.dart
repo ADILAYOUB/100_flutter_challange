@@ -1,6 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
-//// ==================================================================
 // //First project Bottom Navigation Bar design
 
 // import '../00_Start/first.dart';
@@ -10,36 +7,38 @@
 //   runApp(HomePage());
 // }
 
-// ====================================================================
 // // Second Project Update App Bar Using Provider for favorite fruit
-import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import '02_Favorite_Fruit/second.dart';
+// import 'package:flutter/material.dart';
+// import 'package:provider/provider.dart';
+// import '02_Favorite_Fruit/second.dart';
 
-void main() => runApp(
-      ChangeNotifierProvider(
-        create: (_) => Favorite(),
-        child: const FavoriteFruit(),
-      ),
-    );
+// void main() => runApp(
+//       ChangeNotifierProvider(
+//         create: (_) => Favorite(),
+//         child: const FavoriteFruit(),
+//       ),
+//     );
 
 // // Third Project for the UI of the login application and the problem
 // // is that we are having issue with the background image
-// =====================================================================
-// import 'Fourth Project/scn/navbar.dart';
-// import 'Third Project/UI/signUp.dart';
-//
-// void main() => runApp(MyApp());
-// class MyApp extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       debugShowCheckedModeBanner: false,
-//       title: 'Salam',
-//       home: SignupPage(),
-//     );
-//   }
-// }
+import 'package:flutter/material.dart';
+
+import '03_Project/UI/signUp.dart';
+
+void main() => runApp(const MyApp());
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Salam',
+      home: SignupPage(),
+    );
+  }
+}
 
 // // navigation basic very first
 // ========================================================================
