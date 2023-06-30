@@ -23,9 +23,16 @@ class _MyFavoriteFruit extends State<FavoriteFruit> {
           // ignore: avoid_unnecessary_containers
           child: Container(
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 FruitButton(fruit: 'Apple'),
+                const SizedBox(
+                  height: 100,
+                ),
                 FruitButton(fruit: 'Orange'),
+                const SizedBox(
+                  height: 100,
+                ),
                 FruitButton(fruit: 'Banana'),
               ],
             ),
@@ -44,10 +51,27 @@ class FruitButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-        onPressed: () {
-          Provider.of<Favorite>(context, listen: false).changeFruit(fruit);
-        },
-        child: Text(fruit));
+      onPressed: () {
+        Provider.of<Favorite>(context, listen: false).changeFruit(fruit);
+      },
+      style: ElevatedButton.styleFrom(
+        foregroundColor: Colors.black,
+        backgroundColor: Colors.white70,
+        elevation: 2,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8.0),
+        ),
+        minimumSize: const Size(200, 50), // Set the minimum width and height
+        padding: const EdgeInsets.symmetric(
+            vertical: 10), // Adjust the vertical spacing
+      ),
+      child: Text(
+        fruit,
+        style: const TextStyle(
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    );
   }
 }
 
