@@ -43,8 +43,28 @@
 // // navigation basic very first
 // ========================================================================
 
+// import 'package:flutter/material.dart';
+// import '04_Project/scn/navbar.dart';
+
+// void main() => runApp(const MyApp());
+
+// class MyApp extends StatelessWidget {
+//   const MyApp({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return const MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       home: Navbar(),
+//     );
+//   }
+// }
+
+//  Fifth Project on Neumoprism
+
 import 'package:flutter/material.dart';
-import '04_Project/scn/navbar.dart';
+
+import '05/my_neumoprism.dart';
 
 void main() => runApp(const MyApp());
 
@@ -54,33 +74,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Navbar(),
+      home: Scaffold(
+          backgroundColor: Color(0xFFE7ECEF),
+          body: Center(
+            child: MyNeumoprism(),
+          )),
     );
   }
 }
 
-
-// /// Fifth Project on Neumoprism
-// ========================================================================
-// import 'Fifth Project/Neumorphism_Button.dart';
-// void main() => runApp(MyApp());
-//
-// class MyApp extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return const MaterialApp(
-//       home: Scaffold(
-//           backgroundColor:  Color(0xFFE7ECEF),
-//           body: Center(
-//             child: MyNeumoprism(),
-//           )),
-//     );
-//   }
-// }
-
-// =======================================================================
-// // To do list SixthPg for
+// To do list SixthPg for
 // import 'Todo List Sixth Project/pages/todolist.dart';
 //
 // void main() => runApp(MyApp());
