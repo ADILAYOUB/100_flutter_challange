@@ -2,21 +2,26 @@
 
 //// ==================================================================
 // //First project Bottom Navigation Bar design
-//
-// import 'first.dart';
+
+// import '../00_Start/first.dart';
+// import 'package:flutter/material.dart';
+
 // void main() {
 //   runApp(HomePage());
 // }
 
 // ====================================================================
 // // Second Project Update App Bar Using Provider for favorite fruit
-// import 'second.dart';
-// import 'package:provider/provider.dart';
-// void main() => runApp(
-//     ChangeNotifierProvider(create: (_) =>Favorite(),
-//     child:const FavoriteFruit(),
-//     ),
-// );
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '02_Favorite_Fruit/second.dart';
+
+void main() => runApp(
+      ChangeNotifierProvider(
+        create: (_) => Favorite(),
+        child: const FavoriteFruit(),
+      ),
+    );
 
 // // Third Project for the UI of the login application and the problem
 // // is that we are having issue with the background image
@@ -144,22 +149,22 @@
 * */
 
 //! =============Tic Tac Toe =================================
-import 'package:flutter/material.dart';
-import 'package:flutte_challange/09_Tic_Tac_Toe/home_screen.dart';
+// import 'package:flutter/material.dart';
+// import 'package:flutte_challange/09_Tic_Tac_Toe/home_screen.dart';
 
-void main() => runApp(MyApp());
+// void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+// class MyApp extends StatelessWidget {
+//   const MyApp({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'tic tack toe',
-      home: TicScreen(),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return const MaterialApp(
+//       title: 'tic tack toe',
+//       home: TicScreen(),
+//     );
+//   }
+// }
 
 //! ======================== Wallpaper====================================
 
