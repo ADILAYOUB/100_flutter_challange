@@ -144,19 +144,22 @@
 * */
 
 //! =============Tic Tac Toe =================================
-// import 'Tic_Tac_Toe Nineth/home_Screen.dart';
+import 'package:flutter/material.dart';
+import 'package:flutte_challange/09_Tic_Tac_Toe/home_screen.dart';
 
-// void main() => runApp(MyApp());
+void main() => runApp(MyApp());
 
-// class MyApp extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return const MaterialApp(
-//       title: 'tic tack toe',
-//       home: ticScreen(),
-//     );
-//   }
-// }
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      title: 'tic tack toe',
+      home: TicScreen(),
+    );
+  }
+}
 
 //! ======================== Wallpaper====================================
 
@@ -189,59 +192,84 @@
 //   }
 // }
 
+//! =================  11_sqlite_CRUD_operation   ====================================
+
+// import 'package:flutte_challange/11_sqlite_CRUD_operation/screen/home.dart';
+// import 'package:flutter/material.dart';
+
+// void main() {
+//   runApp(const MyApp());
+// }
+
+// class MyApp extends StatelessWidget {
+//   const MyApp({Key? key}) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Flutter Demo',
+//       debugShowCheckedModeBanner: false,
+//       theme: ThemeData(
+//         primarySwatch: Colors.blue,
+//       ),
+//       home: const Sqflite(),
+//     );
+//   }
+// }
+
 //! =================  airbnb book opeining ui   ====================================
-import 'package:flutte_challange/16_airbnb_book_opning_ui/lib/home_page.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+// import 'package:flutte_challange/16_airbnb_book_opning_ui/lib/home_page.dart';
+// import 'package:flutter/material.dart';
+// import 'package:flutter/services.dart';
 
-void main() {
-  WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
-  runApp(const MyApp());
-}
+// void main() {
+//   WidgetsFlutterBinding.ensureInitialized();
+//   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
+//   runApp(const MyApp());
+// }
 
-class MyApp extends StatefulWidget {
-  const MyApp({super.key});
+// class MyApp extends StatefulWidget {
+//   const MyApp({super.key});
 
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
+//   @override
+//   State<MyApp> createState() => _MyAppState();
+// }
 
-class _MyAppState extends State<MyApp> {
-  bool _isInit = true;
+// class _MyAppState extends State<MyApp> {
+//   bool _isInit = true;
 
-  @override
-  void didChangeDependencies() {
-    if (_isInit) {
-      for (var i = 1; i <= 6; i++) {
-        precacheImage(
-          Image.asset('assets/images/listing-$i.jpg').image,
-          context,
-        );
-      }
-      for (var i = 1; i <= 3; i++) {
-        precacheImage(
-          Image.asset('assets/images/person-$i.jpeg').image,
-          context,
-        );
-      }
-    }
-    _isInit = false;
-    super.didChangeDependencies();
-  }
+//   @override
+//   void didChangeDependencies() {
+//     if (_isInit) {
+//       for (var i = 1; i <= 6; i++) {
+//         precacheImage(
+//           Image.asset('assets/images/listing-$i.jpg').image,
+//           context,
+//         );
+//       }
+//       for (var i = 1; i <= 3; i++) {
+//         precacheImage(
+//           Image.asset('assets/images/person-$i.jpeg').image,
+//           context,
+//         );
+//       }
+//     }
+//     _isInit = false;
+//     super.didChangeDependencies();
+//   }
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Airbnb Book Flip Interaction',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        appBarTheme: const AppBarTheme(
-          systemOverlayStyle: SystemUiOverlayStyle.dark,
-        ),
-        primarySwatch: Colors.blue,
-      ),
-      home: const HomePage(),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Flutter Airbnb Book Flip Interaction',
+//       debugShowCheckedModeBanner: false,
+//       theme: ThemeData(
+//         appBarTheme: const AppBarTheme(
+//           systemOverlayStyle: SystemUiOverlayStyle.dark,
+//         ),
+//         primarySwatch: Colors.blue,
+//       ),
+//       home: const HomePage(),
+//     );
+//   }
+// }

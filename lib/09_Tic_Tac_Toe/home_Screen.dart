@@ -2,14 +2,14 @@ import 'constants.dart';
 
 import 'package:flutter/material.dart';
 
-class ticScreen extends StatefulWidget {
-  const ticScreen({Key? key}) : super(key: key);
+class TicScreen extends StatefulWidget {
+  const TicScreen({Key? key}) : super(key: key);
 
   @override
-  State<ticScreen> createState() => _ticScreenState();
+  State<TicScreen> createState() => TicScreenState();
 }
 
-class _ticScreenState extends State<ticScreen> {
+class TicScreenState extends State<TicScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

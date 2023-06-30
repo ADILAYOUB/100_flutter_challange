@@ -160,7 +160,6 @@ class PersonDataBase {
   Stream<
       List<Person>> all() => _streamController.stream.map((persons) => persons
     ..sort()); // this will return the sort list of List of persons => which inturn call the compareto function and it's going to sort them in reverse chronological order
-
 }
 
 //Create the instance of the person class
