@@ -23,7 +23,7 @@
 // // is that we are having issue with the background image
 import 'package:flutter/material.dart';
 
-import '03_Project/UI/signUp.dart';
+import '03_Auth_Basic_UI/UI/signUp.dart';
 
 void main() => runApp(const MyApp());
 
