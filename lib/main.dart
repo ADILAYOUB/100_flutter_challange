@@ -21,9 +21,30 @@
 
 // // Third Project for the UI of the login application and the problem
 // // is that we are having issue with the background image
-import 'package:flutter/material.dart';
+// import 'package:flutter/material.dart';
 
-import '03_Auth_Basic_UI/UI/signUp.dart';
+// import '03_Auth_Basic_UI/UI/signUp.dart';
+
+// void main() => runApp(const MyApp());
+
+// class MyApp extends StatelessWidget {
+//   const MyApp({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return const MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       title: 'Salam',
+//       home: SignupPage(),
+//     );
+//   }
+// }
+
+// // navigation basic very first
+// ========================================================================
+
+import 'package:flutter/material.dart';
+import '04_Project/scn/navbar.dart';
 
 void main() => runApp(const MyApp());
 
@@ -34,25 +55,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Salam',
-      home: SignupPage(),
+      home: Navbar(),
     );
   }
 }
 
-// // navigation basic very first
-// ========================================================================
-// void main()=> runApp(MyApp());
-// class MyApp extends StatelessWidget{
-//   @override
-//   Widget build(BuildContext context){
-//     return MaterialApp(
-//       debugShowCheckedModeBanner:false,
-//        home: Navbar(),
-//     );
-//   }
-// }
-//
 
 // /// Fifth Project on Neumoprism
 // ========================================================================

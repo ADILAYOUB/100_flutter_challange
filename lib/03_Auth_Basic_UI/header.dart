@@ -12,8 +12,8 @@ class Header extends StatelessWidget {
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20.0), color: Colors.indigo),
         ),
-        Stack(
-          children: const [
+        const Stack(
+          children: [
             Align(
                 alignment: Alignment.topCenter,
                 child: SizedBox(

@@ -15,10 +15,10 @@ class Navbar extends StatefulWidget {
 class _NavbarState extends State<Navbar> {
   int _currentIndex = 0;
   final List _children = [
-    Home(),
+    const Home(),
     Profile(),
-    Fav(),
-    Settings(),
+    const Fav(),
+    const Settings(),
   ];
 
   void onTappedBar(int index) {
@@ -32,34 +32,24 @@ class _NavbarState extends State<Navbar> {
     return Scaffold(
       body: _children[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          backgroundColor: Colors.blue[50],
-          elevation: 0,
-          iconSize: 25,
-          selectedFontSize: 10,
-          selectedItemColor: Colors.blue,
-          unselectedItemColor: Colors.blue[200],
-          onTap: onTappedBar,
-          items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'
-                // backgroundColor: Colors.blue,
-                ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label: 'Profile',
-              //  backgroundColor: Colors.green,
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.favorite),
-              label: "Favorite",
-              //  backgroundColor: Colors.red,
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.settings),
-              label: "Settings",
-              //  backgroundColor: Colors.yellow,
-            ),
-          ]),
+        type: BottomNavigationBarType.fixed,
+        backgroundColor: Colors.blue[50],
+        elevation: 0,
+        iconSize: 25,
+        selectedFontSize: 10,
+        selectedItemColor: Colors.blue,
+        unselectedItemColor: Colors.blue[200],
+        onTap: onTappedBar,
+        currentIndex: _currentIndex, // Add this line
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.favorite), label: 'Favorite'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.settings), label: 'Settings'),
+        ],
+      ),
     );
   }
 }
