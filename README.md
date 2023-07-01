@@ -28,5 +28,7 @@
 
 <img height="480px" src="https://raw.githubusercontent.com/ADILAYOUB/100_flutter_challange/master/screenshot/07/01.PNG" > <img height="480px" src="https://raw.githubusercontent.com/ADILAYOUB/100_flutter_challange/master/screenshot/07/03.PNG" > <img height="480px" src="https://raw.githubusercontent.com/ADILAYOUB/100_flutter_challange/master/screenshot/07/02.PNG" > 
 
+## 8 Calculator  
 
+<img height="480px" src="https://raw.githubusercontent.com/ADILAYOUB/100_flutter_challange/master/screenshot/08/01.PNG" > 
 
