@@ -131,22 +131,22 @@
 //   }
 // }
 
-import '08_Calculator/screen/calculator.dart';
-import 'package:flutter/material.dart';
+// import '08_Calculator/screen/calculator.dart';
+// import 'package:flutter/material.dart';
 
-void main() => runApp(const MyApp());
+// void main() => runApp(const MyApp());
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+// class MyApp extends StatelessWidget {
+//   const MyApp({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'calculator ',
-      home: CalScreen(),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return const MaterialApp(
+//       title: 'calculator ',
+//       home: CalScreen(),
+//     );
+//   }
+// }
 
 // ========================================================================
 // Building tic tack to game using android studio
@@ -160,22 +160,22 @@ class MyApp extends StatelessWidget {
 * */
 
 //! =============Tic Tac Toe =================================
-// import 'package:flutter/material.dart';
-// import 'package:flutte_challange/09_Tic_Tac_Toe/home_screen.dart';
+import 'package:flutter/material.dart';
+import 'package:flutte_challange/09_Tic_Tac_Toe/home_screen.dart';
 
-// void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
-// class MyApp extends StatelessWidget {
-//   const MyApp({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return const MaterialApp(
-//       title: 'tic tack toe',
-//       home: TicScreen(),
-//     );
-//   }
-// }
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      title: 'tic tack toe',
+      home: TicScreen(),
+    );
+  }
+}
 
 //! ======================== Wallpaper====================================
 

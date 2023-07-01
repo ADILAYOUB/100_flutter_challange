@@ -40,6 +40,7 @@ class _CalScreenState extends State<CalScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.white30,
         title: const Text('Calculator'),
         centerTitle: true,
       ),
