@@ -62,57 +62,50 @@
 
 //  Fifth Project on Neumoprism
 
+// import 'package:flutter/material.dart';
+
+// import '05/my_neumoprism.dart';
+
+// void main() => runApp(const MyApp());
+
+// class MyApp extends StatelessWidget {
+//   const MyApp({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return const MaterialApp(
+//       home: Scaffold(
+//           backgroundColor: Color(0xFFE7ECEF),
+//           body: Center(
+//             child: MyNeumoprism(),
+//           )),
+//     );
+//   }
+// }
+
+// To do list SixthPg for
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '06_todolist_UI/todo_list_screen.dart';
 
-import '05/my_neumoprism.dart';
-
-void main() => runApp(const MyApp());
+void main() {
+  runApp(const ProviderScope(child: MyApp()));
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-          backgroundColor: Color(0xFFE7ECEF),
-          body: Center(
-            child: MyNeumoprism(),
-          )),
+    return MaterialApp(
+      title: 'Todo App',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const TodoHomeThreePage(),
     );
   }
 }
-
-// To do list SixthPg for
-// import 'Todo List Sixth Project/pages/todolist.dart';
-//
-// void main() => runApp(MyApp());
-//
-// class MyApp extends StatelessWidget{
-//   @override
-//   Widget build(BuildContext context){
-//     return MaterialApp(
-//       theme: ThemeData(
-//         primarySwatch: Colors.deepPurple,
-//         primaryColor: Colors.deepPurple,
-//         textTheme: const TextTheme(
-//           caption: TextStyle(
-//             color: Colors.white,
-//             fontSize: 20,
-//             fontWeight: FontWeight.w600,
-//           ),
-//           subtitle1: TextStyle(
-//             color: Colors.white,
-//             fontSize: 20,
-//             fontWeight: FontWeight.w600,
-//           ),
-//         ),
-//       ),
-//       home: const todoList()
-//     );
-//   }
-// }
-
 // ========================================================================
 //
 // //Login Screen

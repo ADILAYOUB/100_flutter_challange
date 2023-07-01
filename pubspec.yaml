@@ -15,6 +15,7 @@ dependencies:
   riverpod: 
   flutter_riverpod: 
   sqflite:
+  font_awesome_flutter: ^10.5.0
 
 dev_dependencies:
   flutter_test:
