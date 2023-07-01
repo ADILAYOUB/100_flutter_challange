@@ -84,53 +84,53 @@
 // }
 
 // To do list SixthPg for
-// import 'package:flutter/material.dart';
-// import 'package:flutter_riverpod/flutter_riverpod.dart';
-// import '06_todolist_UI/todo_list_screen.dart';
-
-// void main() {
-//   runApp(const ProviderScope(child: MyApp()));
-// }
-
-// class MyApp extends StatelessWidget {
-//   const MyApp({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       title: 'Todo App',
-//       theme: ThemeData(
-//         primarySwatch: Colors.blue,
-//       ),
-//       home: const TodoHomeThreePage(),
-//     );
-//   }
-// }
-
-//Login Screen
 import 'package:flutter/material.dart';
-import '07_Login_Screen/login_screen.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '06_todolist_UI/todo_list_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Login UI',
-      debugShowCheckedModeBanner: false,
+      title: 'Todo App',
       theme: ThemeData(
-        primaryColor: const Color(0xff4C53FB),
+        primarySwatch: Colors.blue,
       ),
-      home: const LoginScreen(),
+      home: const TodoHomeThreePage(),
     );
   }
 }
+
+//Login Screen
+// import 'package:flutter/material.dart';
+// import '07_Login_Screen/login_screen.dart';
+
+// void main() {
+//   runApp(const MyApp());
+// }
+
+// class MyApp extends StatelessWidget {
+//   const MyApp({Key? key}) : super(key: key);
+
+//   // This widget is the root of your application.
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Login UI',
+//       debugShowCheckedModeBanner: false,
+//       theme: ThemeData(
+//         primaryColor: const Color(0xff4C53FB),
+//       ),
+//       home: const LoginScreen(),
+//     );
+//   }
+// }
 
 // ========================================================================
 //
