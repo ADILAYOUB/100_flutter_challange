@@ -10,6 +10,8 @@ void main() {
 }
 
 final dioProvider = Provider<Dio>((ref) {
+  // This code creates a `Dio` instance with a base URL of `https://api.themoviedb.org/3/`.
+  // The `Dio` class is a HTTP client that can be used to make requests to web APIs.
   return Dio(
     BaseOptions(
       baseUrl: 'https://api.themoviedb.org/3/',

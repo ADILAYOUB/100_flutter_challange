@@ -13,6 +13,7 @@ class MovieFlow extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return PageView(
+      // Get the movie flow controller from the provider.
       controller: ref.watch(movieFlowControllerProvider).pageController,
       physics: const NeverScrollableScrollPhysics(),
       children: const [
