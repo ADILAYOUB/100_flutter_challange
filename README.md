@@ -53,8 +53,11 @@
   <img height="480px" src="https://raw.githubusercontent.com/ADILAYOUB/100_flutter_challange/12/screenshot/05.PNG" >
   <img height="480px" src="https://raw.githubusercontent.com/ADILAYOUB/100_flutter_challange/12/screenshot/06.PNG" >
 </div>
+
 ## Video Preview
-[![Video Preview] (https://img.youtube.com/vi/u0HUCmoAQhU/0.jpg)](https://youtu.be/u0HUCmoAQhU)
+
+[![Video Preview](https://img.youtube.com/vi/u0HUCmoAQhU/0.jpg)](https://youtu.be/u0HUCmoAQhU)
+
 
 ## 13. Quiz Application with Political Question  
 <div style="display: flex; justify-content: space-between;">
