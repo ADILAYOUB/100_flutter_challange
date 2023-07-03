@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:path_provider/path_provider.dart';
+import 'package:path_provider/path_provider.dart' as p;
 import 'package:sqflite/sqflite.dart';
 
 class Person implements Comparable {
@@ -43,7 +43,7 @@ class PersonDatabase {
     if (_db != null) {
       return true;
     }
-    final directory = await getApplicationDocumentsDirectory();
+    final directory = await p.getApplicationDocumentsDirectory();
     final path = '${directory.path}/$dbName';
 
     try {

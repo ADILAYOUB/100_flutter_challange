@@ -16,7 +16,7 @@ class _NavbarState extends State<Navbar> {
   int _currentIndex = 0;
   final List _children = [
     const Home(),
-    Profile(),
+    const Profile(),
     const Fav(),
     const Settings(),
   ];

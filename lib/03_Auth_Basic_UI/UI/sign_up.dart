@@ -1,4 +1,3 @@
-// ignore: file_names
 import '../header.dart';
 
 import 'package:flutter/material.dart';
@@ -13,8 +12,8 @@ class SignupPage extends StatelessWidget {
       children: <Widget>[
         Container(
           color: Colors.indigo[100],
-          child: Column(
-            children: const [Signup()],
+          child: const Column(
+            children: [Signup()],
           ),
         ),
       ],
@@ -27,8 +26,8 @@ class Signup extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: <Widget>[
+    return const Stack(
+      children: [
         Header(),
         Positioned.fill(
           top: 160.0,
@@ -42,6 +41,8 @@ class Signup extends StatelessWidget {
 }
 
 class SignupCard extends StatelessWidget {
+  const SignupCard({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(

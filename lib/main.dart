@@ -1,4 +1,4 @@
-// //First project Bottom Navigation Bar design
+// First project Bottom Navigation Bar design
 
 // import '../00_Start/first.dart';
 // import 'package:flutter/material.dart';
@@ -7,7 +7,7 @@
 //   runApp(HomePage());
 // }
 
-// // Second Project Update App Bar Using Provider for favorite fruit
+//  Second Project Update App Bar Using Provider for favorite fruit
 // import 'package:flutter/material.dart';
 // import 'package:provider/provider.dart';
 // import '02_Favorite_Fruit/second.dart';
@@ -19,8 +19,8 @@
 //       ),
 //     );
 
-// // Third Project for the UI of the login application and the problem
-// // is that we are having issue with the background image
+//  Third Project for the UI of the login application and the problem
+//  is that we are having issue with the background image
 // import 'package:flutter/material.dart';
 
 // import '03_Auth_Basic_UI/UI/signUp.dart';
@@ -40,7 +40,7 @@
 //   }
 // }
 
-// // navigation basic very first
+//  navigation basic very first
 // ========================================================================
 
 // import 'package:flutter/material.dart';
@@ -210,28 +210,28 @@
 
 //! =================  11_sqlite_CRUD_operation   ====================================
 
-import 'package:flutte_challange/11_sqlite_CRUD_operation/screen/home.dart';
-import 'package:flutter/material.dart';
+// import 'package:flutte_challange/11_sqlite_CRUD_operation/screen/home.dart';
+// import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+// void main() {
+//   runApp(const MyApp());
+// }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+// class MyApp extends StatelessWidget {
+//   const MyApp({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: Sqflite(),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Flutter Demo',
+//       debugShowCheckedModeBanner: false,
+//       theme: ThemeData(
+//         primarySwatch: Colors.blue,
+//       ),
+//       home: const Sqflite(),
+//     );
+//   }
+// }
 
 //! =================  airbnb book opeining ui   ====================================
 // import 'package:flutte_challange/16_airbnb_book_opning_ui/lib/home_page.dart';

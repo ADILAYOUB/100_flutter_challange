@@ -55,9 +55,9 @@ class BookCoverBack extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 5),
-              Row(
+              const Row(
                 mainAxisSize: MainAxisSize.min,
-                children: const [
+                children: [
                   Icon(Icons.person, size: 16),
                   SizedBox(width: 2),
                   Text(
