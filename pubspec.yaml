@@ -17,6 +17,8 @@ dependencies:
   sqflite:
   font_awesome_flutter: ^10.5.0
   math_expressions: ^2.4.0
+  google_fonts: ^5.1.0
+  sizer: ^2.0.15
 
 
 dev_dependencies:
