@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
 import 'package:sizer/sizer.dart';
 import '../widgets/ad_on.dart';
 import '../widgets/carousel_slider.dart';
 import '../widgets/products.dart';
-=======
-import 'package:google_fonts/google_fonts.dart';
-import 'package:sizer/sizer.dart';
->>>>>>> d18ca6e88a402bf2f94710e7b1bc0d6fa696192c
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -18,7 +13,6 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: Colors.grey.shade100,
       body: CustomScrollView(
         slivers: [
-<<<<<<< HEAD
           // silver appbar
           SliverAppBar(
             backgroundColor: Colors.white,
@@ -70,58 +64,6 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           const Products(),
-=======
-          // SliverAppBar is a flexible app bar that can expand and collapse.
-          SliverAppBar(
-            title: Text(
-              'My Custom Scroll View',
-              style: GoogleFonts.openSans(
-                textStyle: TextStyle(
-                    fontSize: 18.0,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black),
-              ),
-            ),
-            expandedHeight: 20.h,
-            flexibleSpace: Image.network(
-              'https://miro.medium.com/v2/resize:fit:1100/format:webp/1*Ktvy6_Ldzx9CjrrK3Vg9Fw.png',
-              fit: BoxFit.cover,
-            ),
-          ),
-
-          // SliverList displays a list of items in a vertical scrollable layout.
-          SliverList(
-            delegate: SliverChildBuilderDelegate(
-              (context, index) {
-                return ListTile(
-                  title: Text('Item $index'),
-                );
-              },
-              childCount: 5,
-            ),
-          ),
-
-          // SliverGrid displays a grid of items in a scrollable layout.
-          SliverGrid(
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              mainAxisSpacing: 8.0,
-              crossAxisSpacing: 8.0,
-              childAspectRatio: 1.0,
-            ),
-            delegate: SliverChildBuilderDelegate(
-              (context, index) {
-                return Container(
-                  color: Colors.blue,
-                  child: Center(
-                    child: Text('Grid Item $index'),
-                  ),
-                );
-              },
-              childCount: 6,
-            ),
-          ),
->>>>>>> d18ca6e88a402bf2f94710e7b1bc0d6fa696192c
         ],
       ),
       bottomNavigationBar: SizedBox(

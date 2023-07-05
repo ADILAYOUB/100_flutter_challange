@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 import '../data/local_data.dart';
+import '../screens/product_detail.dart';
 
 class Products extends StatelessWidget {
   const Products({super.key});
@@ -10,11 +11,20 @@ class Products extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverGrid.count(
-      crossAxisCount: 2,
-      childAspectRatio: 0.68,
-      crossAxisSpacing: 3.w,
-      mainAxisSpacing: 1.5.h,
-      // children: List.generate(productList.length, (index) => ProductItem())
-    );
+        crossAxisCount: 2,
+        childAspectRatio: 0.68,
+        crossAxisSpacing: 3.w,
+        mainAxisSpacing: 1.5.h,
+        children: List.generate(
+            productList.length,
+            (index) => ProductItem(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              ProductDetail(model: productList[index])));
+                },
+                model: productList[index])));
   }
 }
