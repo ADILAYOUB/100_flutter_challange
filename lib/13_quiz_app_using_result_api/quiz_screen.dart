@@ -1,9 +1,9 @@
-import 'package:flutte_challange/questions_model.dart';
-import 'package:flutte_challange/result_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'constants.dart';
 import 'questions.dart';
+import 'questions_model.dart';
+import 'result_screen.dart';
 
 class QuizScreen extends StatefulWidget {
   const QuizScreen({super.key});

@@ -1,10 +1,11 @@
 import 'dart:convert';
 
-import 'package:flutte_challange/app_theme.dart';
-import 'package:flutte_challange/model.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
+
+import 'app_theme.dart';
+import 'model.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

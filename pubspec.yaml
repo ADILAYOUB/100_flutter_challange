@@ -7,7 +7,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-<<<<<<< HEAD
   provider: 
   get: 
   hive_flutter: 
@@ -22,10 +21,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   multiple_result: ^1.0.4
-=======
-  http: ^1.0.0
-  shared_preferences: ^2.1.2
->>>>>>> origin/14
+  shared_preferences: ^2.2.0
   
 dev_dependencies:
   flutter_test:
