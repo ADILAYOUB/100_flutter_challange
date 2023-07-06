@@ -41,8 +41,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.17.1"
-<<<<<<< HEAD
-=======
   crypto:
     dependency: transitive
     description:
@@ -67,7 +65,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "5.2.1+1"
->>>>>>> master
   fake_async:
     dependency: transitive
     description:
@@ -104,9 +101,6 @@ packages:
       sha256: "2118df84ef0c3ca93f96123a616ae8540879991b8b57af2f81b76a7ada49b2a4"
       url: "https://pub.dev"
     source: hosted
-<<<<<<< HEAD
-    version: "2.0.1"
-=======
     version: "2.0.2"
   flutter_riverpod:
     dependency: "direct main"
@@ -116,14 +110,11 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.3.6"
->>>>>>> master
   flutter_test:
     dependency: "direct dev"
     description: flutter
     source: sdk
     version: "0.0.0"
-<<<<<<< HEAD
-=======
   font_awesome_flutter:
     dependency: "direct main"
     description:
@@ -172,7 +163,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.2"
->>>>>>> master
   js:
     dependency: transitive
     description:
@@ -221,8 +211,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.9.1"
-<<<<<<< HEAD
-=======
   multiple_result:
     dependency: "direct main"
     description:
@@ -239,7 +227,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.0"
->>>>>>> master
   path:
     dependency: transitive
     description:
@@ -249,11 +236,7 @@ packages:
     source: hosted
     version: "1.8.3"
   path_provider:
-<<<<<<< HEAD
-    dependency: "direct main"
-=======
     dependency: transitive
->>>>>>> master
     description:
       name: path_provider
       sha256: "3087813781ab814e4157b172f1a11c46be20179fcc9bea043e0fba36bc0acaa2"
@@ -324,8 +307,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.2.4"
-<<<<<<< HEAD
-=======
   provider:
     dependency: "direct main"
     description:
@@ -342,7 +323,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.3.6"
->>>>>>> master
   sky_engine:
     dependency: transitive
     description: flutter
@@ -368,17 +348,10 @@ packages:
     dependency: transitive
     description:
       name: sqflite_common
-<<<<<<< HEAD
-      sha256: e77abf6ff961d69dfef41daccbb66b51e9983cdd5cb35bf30733598057401555
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.4.5"
-=======
       sha256: "8f7603f3f8f126740bc55c4ca2d1027aab4b74a1267a3e31ce51fe40e3b65b8f"
       url: "https://pub.dev"
     source: hosted
     version: "2.4.5+1"
->>>>>>> master
   stack_trace:
     dependency: transitive
     description:
@@ -387,6 +360,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.11.0"
+  state_notifier:
+    dependency: transitive
+    description:
+      name: state_notifier
+      sha256: "8fe42610f179b843b12371e40db58c9444f8757f8b69d181c97e50787caed289"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.7.2+1"
   stream_channel:
     dependency: transitive
     description:
@@ -427,6 +408,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.5.1"
+  typed_data:
+    dependency: transitive
+    description:
+      name: typed_data
+      sha256: facc8d6582f16042dd49f2463ff1bd6e2c9ef9f3d5da3d9b087e244a7b564b3c
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.3.2"
   vector_math:
     dependency: transitive
     description:
@@ -439,17 +428,10 @@ packages:
     dependency: transitive
     description:
       name: win32
-<<<<<<< HEAD
-      sha256: "7dacfda1edcca378031db9905ad7d7bd56b29fd1a90b0908b71a52a12c41e36b"
-      url: "https://pub.dev"
-    source: hosted
-    version: "5.0.3"
-=======
       sha256: dfdf0136e0aa7a1b474ea133e67cb0154a0acd2599c4f3ada3b49d38d38793ee
       url: "https://pub.dev"
     source: hosted
     version: "5.0.5"
->>>>>>> master
   xdg_directories:
     dependency: transitive
     description:
@@ -459,9 +441,5 @@ packages:
     source: hosted
     version: "1.0.0"
 sdks:
-<<<<<<< HEAD
-  dart: ">=3.0.0 <4.0.0"
-=======
   dart: ">=3.0.1 <4.0.0"
->>>>>>> master
   flutter: ">=3.3.0"
