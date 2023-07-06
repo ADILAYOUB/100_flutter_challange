@@ -126,7 +126,7 @@ class TMDBMovieRepository implements MovieRepository {
       final genres = results.map((e) => GenreEntity.fromMap(e)).toList();
 
       return genres;
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       if (e.error is SocketException) {
         throw Failure(
           message: 'No internet connection',
@@ -161,7 +161,7 @@ class TMDBMovieRepository implements MovieRepository {
       final results = List<Map<String, dynamic>>.from(response.data['results']);
       final movies = results.map((e) => MovieEntity.fromMap(e)).toList();
       return movies;
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       if (e.error is SocketException) {
         throw Failure(
           message: 'No internet connection',
