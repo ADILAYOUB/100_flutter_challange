@@ -1,4 +1,4 @@
-import 'package:flutte_challange/18_shoping_UI/widgets/product_item.dart';
+import 'package:flutte_challange/17_shoping_UI/widgets/product_item.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 

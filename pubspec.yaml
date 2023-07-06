@@ -19,10 +19,9 @@ dependencies:
   math_expressions: ^2.4.0
   google_fonts: ^5.1.0
   sizer: ^2.0.15
-<<<<<<< HEAD
   carousel_slider: ^4.2.1
-=======
->>>>>>> d18ca6e88a402bf2f94710e7b1bc0d6fa696192c
+  dio: ^5.2.1+1
+  shared_preferences: ^2.2.0
 
 
 dev_dependencies:
