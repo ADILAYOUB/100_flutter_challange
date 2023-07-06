@@ -74,9 +74,9 @@ class TMDBMovieService implements MovieService {
       final genreEntities = await _movieDbRepository.getMovieGenres();
       final genres =
           genreEntities.map((e) => Genre.fromEntity(e)).toList(growable: false);
-      return Success(genres);
+      return Success(genres as Failure);
     } on Failure catch (failure) {
-      return Error(failure);
+      return Error(failure as List<Genre>);
     }
   }
 
@@ -95,12 +95,12 @@ class TMDBMovieService implements MovieService {
           .toList(growable: false);
 
       if (movies.isEmpty) {
-        return Error(Failure(message: 'No movies found'));
+        return Error(Failure(message: 'No movies found') as List<Movie>);
       }
 
-      return Success(movies);
+      return Success(movies as Failure);
     } on Failure catch (failure) {
-      return Error(failure);
+      return Error(failure as List<Movie>);
     }
   }
 }
