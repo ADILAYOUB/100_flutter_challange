@@ -1,27 +1,27 @@
-//? Quiz app
-
+import 'package:flutte_challange/app_theme.dart';
 import 'package:flutter/material.dart';
 
-import 'home.dart';
+import './home_screen.dart';
 
-void main() {
-  runApp(const QuizApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await AppTheme.getThemeValue(); // Call the method on the instance
+  runApp(const MyApp());
 }
 
-class QuizApp extends StatelessWidget {
-  const QuizApp({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Quiz App',
+      title: 'cripto currency',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: const Color(0xFF68F3FF), //  theme color
-        // Define other theme properties here
-        // For example: fontFamily, textTheme, accentColor, etc.
+        primarySwatch: Colors.cyan,
+        colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.lime),
       ),
-      home: const Home(),
+      home: const HomeScreen(),
     );
   }
 }
