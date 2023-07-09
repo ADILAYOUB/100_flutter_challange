@@ -1,4 +1,4 @@
-package com.adilayoubbhat.flutte_challange
+package com.example.flutterchallenge
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -1,6 +1,6 @@
 {
-    "name": "flutte_challange",
-    "short_name": "flutte_challange",
+    "name": "flutterchallenge",
+    "short_name": "flutterchallenge",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
