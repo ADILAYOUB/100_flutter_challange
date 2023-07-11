@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import '../services/auth_services.dart';
 import 'package:provider/provider.dart';
 
-import 'home_screen.dart';
-import 'login_screen.dart';
+import 'home/home_screen.dart';
+import 'login signup/login_screen.dart';
 
 class EmpSplashScreen extends StatelessWidget {
   const EmpSplashScreen({super.key});

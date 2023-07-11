@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutterchallenge/Employee%20Attendence/services/auth_services.dart';
 import 'package:iconly/iconly.dart';
 import 'package:provider/provider.dart';
 
-import '../widgets/elevated_button.dart';
-import '../widgets/text_widget.dart';
+import '../../services/auth_services.dart';
+import '../../widgets/elevated_button.dart';
+import '../../widgets/text_widget.dart';
 
 class EmpRegistrationScreen extends StatefulWidget {
   const EmpRegistrationScreen({super.key});

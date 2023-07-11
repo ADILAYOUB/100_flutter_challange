@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 
+import '../attendence/attendence_screen.dart';
+import '../calender/calender_screen.dart';
+import '../profile/profile_screen.dart';
+
 class EmpHomeScreen extends StatefulWidget {
   const EmpHomeScreen({super.key});
 
@@ -19,7 +23,14 @@ class _EmpHomeScreenState extends State<EmpHomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: const Text('HI'),
+      body: IndexedStack(
+        index: currentIndex,
+        children: const [
+          EmpCalenderScreen(),
+          EmpAttendenceScreen(),
+          EmpProfileScreen(),
+        ],
+      ),
       bottomNavigationBar: Container(
         height: 70,
         margin: const EdgeInsets.only(left: 12, right: 12, bottom: 24),
