@@ -44,7 +44,11 @@ class HomeScreen extends StatelessWidget {
                     color: Colors.blueGrey,
                   ),
                   child: IconButton(
-                      onPressed: () {}, icon: const Icon(IconlyLight.filter)),
+                    onPressed: () {},
+                    icon: const Icon(
+                      IconlyLight.filter,
+                    ),
+                  ),
                 ),
                 const SizedBox(
                   width: 10,
