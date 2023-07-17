@@ -1,0 +1,43 @@
+Flutter App Documentation
+main.dart
+main()
+This function is the entry point of the Flutter app. It initializes the Flutter framework, loads environment variables using the dotenv package, initializes the Supabase client, and runs the EmpApp widget.
+
+EmpApp
+This widget is the root of the Flutter app. It sets up providers for the authentication service (AuthService) and the database service (DatabaseService). It also configures the app's theme and sets the initial screen to EmpLoginScreen.
+
+widgets/text_widget.dart
+buildTextField()
+This function returns a TextField widget with customized styling, including a label, prefix icon, and border.
+
+widgets/elevated_button.dart
+buildElevatedButton()
+This function returns a SizedBox widget containing an elevated button. The button's appearance can vary depending on the provided parameters, such as the button label, background color, loading state, etc.
+
+utils/snackbar.dart
+Common.showSnackBar()
+This static method shows a SnackBar widget with a provided message and optional color. It uses ScaffoldMessenger to display the snack bar in the specified BuildContext.
+
+services/database_service.dart
+DatabaseService
+This class provides methods for interacting with the database, specifically related to user registration and data insertion. It includes a generateRandomEmployeeId() method to generate a random employee ID.
+
+services/auth_services.dart
+AuthService
+This class manages user authentication-related operations, such as user registration, login, and sign-out. It uses the Supabase client for authentication and relies on the DatabaseService for user insertion. It also includes a isLoading property to track the loading state and a currentUser property to retrieve the current user.
+
+screens/emp_registration_screen.dart
+EmpRegistrationScreen
+This widget represents the employee registration screen. It includes text fields for email and password input, as well as a registration button. It uses the AuthService to handle the registration process.
+
+screens/emp_login_screen.dart
+EmpLoginScreen
+This widget represents the employee login screen. It includes text fields for email and password input, a login button, and a navigation button to the registration screen. It uses the AuthService to handle the login process.
+
+models/user_model.dart
+UserModel
+This class represents a user in the app. It includes properties such as ID, name, email, employee ID, and department. The class includes a fromJson() factory method to convert a JSON object to a UserModel instance.
+
+constants/constants.dart
+Constants
+This class contains constant values used throughout the app. It includes table names for the employee and department entities.

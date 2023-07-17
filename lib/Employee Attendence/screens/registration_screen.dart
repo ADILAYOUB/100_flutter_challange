@@ -1,28 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:flutterchallenge/Employee%20Attendence/services/auth_services.dart';
 import 'package:iconly/iconly.dart';
 import 'package:provider/provider.dart';
 
-import '../services/auth_services.dart';
 import '../widgets/elevated_button.dart';
 import '../widgets/text_widget.dart';
-import 'registration_screen.dart';
 
-class EmpLoginScreen extends StatefulWidget {
-  const EmpLoginScreen({Key? key}) : super(key: key);
+class EmpRegistrationScreen extends StatefulWidget {
+  const EmpRegistrationScreen({super.key});
 
   @override
-  State<EmpLoginScreen> createState() => _EmpLoginScreenState();
+  State<EmpRegistrationScreen> createState() => _EmpRegistrationScreenState();
 }
 
-class _EmpLoginScreenState extends State<EmpLoginScreen> {
+class _EmpRegistrationScreenState extends State<EmpRegistrationScreen> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.sizeOf(context).width;
+    double height = MediaQuery.sizeOf(context).height;
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.red,
+      ),
       resizeToAvoidBottomInset: false,
       body: Column(
         children: [
@@ -44,9 +45,9 @@ class _EmpLoginScreenState extends State<EmpLoginScreen> {
                 ),
                 SizedBox(height: 24),
                 Text(
-                  "Employee",
+                  "Employee Registration",
                   style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                ),
+                )
               ],
             ),
           ),
@@ -74,36 +75,18 @@ class _EmpLoginScreenState extends State<EmpLoginScreen> {
                   builder: (context, authServiceProvider, child) {
                     return buildElevatedButton(
                       onPressed: () {
-                        authServiceProvider.loginEmployee(
-                          _emailController.text.trim(),
-                          _passwordController.text.trim(),
-                          context,
-                        );
+                        authServiceProvider.registerEmployee(
+                            _emailController.text.trim(),
+                            _passwordController.text.trim(),
+                            context);
                       },
                       isLoading: authServiceProvider.isLoading,
-                      label: 'Login',
+                      label: 'Registration',
                       backgroundColor: Colors.red,
                     );
                   },
                 ),
               ],
-            ),
-          ),
-          const SizedBox(
-            height: 24,
-          ),
-          TextButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: ((context) => const EmpRegistrationScreen()),
-                ),
-              );
-            },
-            child: const Text(
-              'New Employee? Register Here!',
-              textAlign: TextAlign.end,
             ),
           ),
         ],

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:provider/provider.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 import 'screens/login_screen.dart';
+import 'services/auth_services.dart';
+import 'services/database_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,12 +23,18 @@ class EmpApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      darkTheme: ThemeData.dark(
-        useMaterial3: true,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => AuthService()),
+        ChangeNotifierProvider(create: (context) => DatabaseService()),
+      ],
+      child: MaterialApp(
+        darkTheme: ThemeData.dark(
+          useMaterial3: true,
+        ),
+        themeMode: ThemeMode.dark,
+        home: const EmpLoginScreen(),
       ),
-      themeMode: ThemeMode.dark,
-      home: const EmpLoginScreen(),
     );
   }
 }
