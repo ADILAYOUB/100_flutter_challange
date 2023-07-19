@@ -28,6 +28,7 @@ class AuthService extends ChangeNotifier {
         email: email,
         password: password,
       );
+      // ignore: unnecessary_null_comparison
       if (response != null) {
         await _dbService.insertUser(email, response.user!.id);
         // ignore: use_build_context_synchronously

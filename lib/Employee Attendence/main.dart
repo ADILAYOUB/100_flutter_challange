@@ -3,7 +3,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:provider/provider.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
-import 'screens/login_screen.dart';
+import 'screens/splash_screen.dart';
 import 'services/auth_services.dart';
 import 'services/database_service.dart';
 
@@ -33,7 +33,7 @@ class EmpApp extends StatelessWidget {
           useMaterial3: true,
         ),
         themeMode: ThemeMode.dark,
-        home: const EmpLoginScreen(),
+        home: const EmpSplashScreen(),
       ),
     );
   }
