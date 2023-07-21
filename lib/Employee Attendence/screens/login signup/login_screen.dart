@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 import 'package:provider/provider.dart';
 
-import '../services/auth_services.dart';
-import '../widgets/elevated_button.dart';
-import '../widgets/text_widget.dart';
+import '../../services/auth_services.dart';
+import '../../widgets/elevated_button.dart';
+import '../../widgets/text_widget.dart';
 import 'registration_screen.dart';
 
 class EmpLoginScreen extends StatefulWidget {

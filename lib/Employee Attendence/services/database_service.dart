@@ -19,9 +19,10 @@ class DatabaseService extends ChangeNotifier {
     return randomString;
   }
 
+//! Insert New User Data
   Future insertUser(String email, var id) async {
     await _supabase.from(Constants.employeeTable).insert({
-      'id': id,
+      'id': id, // this id is auth id
       'email': email,
       'name': '',
       'employee_id': generateRandomEmployeeId(),
