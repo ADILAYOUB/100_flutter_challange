@@ -70,3 +70,8 @@
 </div>
 
 ## 15. Chat Application 
+
+## 18. Chat GPT API integration Basic Question Answer App   
+<div style="display: flex; justify-content: space-between;">
+<img height="480px" src="https://raw.githubusercontent.com/ADILAYOUB/100_flutter_challange/employee_attendency/screenshot/15/1.PNG" > <img height="480px" src="https://raw.githubusercontent.com/ADILAYOUB/100_flutter_challange/employee_attendency/screenshot/15/2.PNG" > <img height="480px" src="https://raw.githubusercontent.com/ADILAYOUB/100_flutter_challange/employee_attendency/screenshot/15/3.PNG" > 
+</div>
