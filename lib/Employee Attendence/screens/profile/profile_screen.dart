@@ -16,7 +16,10 @@ class _EmpProfileScreenState extends State<EmpProfileScreen> {
   @override
   Widget build(BuildContext context) {
     final dbservice = Provider.of<DatabaseService>(context);
-
+    dbservice.alldepartments.isEmpty ? dbservice.getAllDepartments() : null;
+    _nameController.text.isEmpty
+        ? _nameController.text = dbservice.userModel!.name
+        : null;
     return Scaffold(
       body: dbservice.userModel == null
           ? const Center(
