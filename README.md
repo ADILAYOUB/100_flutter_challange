@@ -71,6 +71,16 @@
 
 ## 15. Chat Application 
 
+## 16 Flutter Mobile App For Employee CheckIn and CheckOut with Location and Using Supabase Database with Monthly Check
+<div style="display: flex; justify-content: space-between;">
+<img height="480px" src="https://github.com/ADILAYOUB/100_flutter_challange/blob/master/screenshot/16/3.PNG" > <img height="480px" src="https://github.com/ADILAYOUB/100_flutter_challange/blob/master/screenshot/16/4.PNG" > <img height="480px" src="https://github.com/ADILAYOUB/100_flutter_challange/blob/master/screenshot/16/2.PNG" > <img height="480px" src="https://github.com/ADILAYOUB/100_flutter_challange/blob/master/screenshot/16/1.PNG" >
+</div>
+
+## App Preview 
+
+[![Video Preview](https://i9.ytimg.com/vi_webp/FwxyCf2JDjk/mq2.webp?sqp=CNiygKYG-oaymwEmCMACELQB8quKqQMa8AEB-AGcAoAC4AOKAgwIABABGH8gJigjMA8=&rs=AOn4CLBjuvtRNxGYZ7P0UlOqcZAjfdmyww)](https://www.youtube.com/watch?v=FwxyCf2JDjk)
+
+
 ## 18. Chat GPT API integration Basic Question Answer App   
 <div style="display: flex; justify-content: space-between;">
 <img height="480px" src="https://raw.githubusercontent.com/ADILAYOUB/100_flutter_challange/employee_attendency/screenshot/15/1.PNG" > <img height="480px" src="https://raw.githubusercontent.com/ADILAYOUB/100_flutter_challange/employee_attendency/screenshot/15/2.PNG" > <img height="480px" src="https://raw.githubusercontent.com/ADILAYOUB/100_flutter_challange/employee_attendency/screenshot/15/3.PNG" > 
