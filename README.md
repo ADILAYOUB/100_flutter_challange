@@ -78,8 +78,7 @@
 
 ## App Preview 
 
-[![Video Preview](https://www.youtube.com/watch?v=FwxyCf2JDjk)
-
+[![Video Preview](https://i9.ytimg.com/vi_webp/FwxyCf2JDjk/mq2.webp?sqp=CNiygKYG-oaymwEmCMACELQB8quKqQMa8AEB-AGcAoAC4AOKAgwIABABGH8gJigjMA8=&rs=AOn4CLBjuvtRNxGYZ7P0UlOqcZAjfdmyww)](https://www.youtube.com/watch?v=FwxyCf2JDjk)
 
 
 ## 18. Chat GPT API integration Basic Question Answer App   
