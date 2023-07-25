@@ -78,7 +78,7 @@
 
 ## App Preview 
 
-[![Video Preview](https://youtu.be/FwxyCf2JDjk)
+[![Video Preview](https://www.youtube.com/watch?v=FwxyCf2JDjk)
 
 
 
