@@ -57,6 +57,19 @@ dependencies:
   simple_month_year_picker: ^1.0.5
   location: ^4.0.1
   flutter_bloc: ^7.0.0
+  cloud_firestore: ^4.8.4
+  file_picker: ^5.3.3
+  mime: ^1.0.4
+  path_provider: ^2.1.0
+  flutter_image_compress: ^2.0.4
+  url_launcher: ^6.1.12
+  audioplayers: ^5.0.0
+  chess: ^0.8.0
+  chewie: ^1.7.0
+  video_player: ^2.7.0
+  flutter_download_manager: ^0.5.5
+  permission_handler: ^10.4.3
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

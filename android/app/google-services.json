@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1016031509323",
+    "project_id": "derive-clone",
+    "storage_bucket": "derive-clone.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1016031509323:android:2803b881c07a648d5846ce",
+        "android_client_info": {
+          "package_name": "com.example.flutterchallenge"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1016031509323-98crhobt7kbq2gfhtgqavusbs8jbvm5h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBRphSCY22Nk1Xd1n3b_fBYvTaA3VVaPQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1016031509323-98crhobt7kbq2gfhtgqavusbs8jbvm5h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

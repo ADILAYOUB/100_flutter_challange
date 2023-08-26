@@ -44,39 +44,39 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCFWgM7js8AvLyyAjTXRz0hQJwRtogsBX8',
-    appId: '1:589324556492:web:848d922b4a9b3eac1c0a69',
-    messagingSenderId: '589324556492',
-    projectId: 'sameerloginproj',
-    authDomain: 'sameerloginproj.firebaseapp.com',
-    storageBucket: 'sameerloginproj.appspot.com',
+    apiKey: 'AIzaSyDRwiou0S__78gmqkSMZP8rqkX1laiMKT8',
+    appId: '1:1016031509323:web:7d9d9605fc68625f5846ce',
+    messagingSenderId: '1016031509323',
+    projectId: 'derive-clone',
+    authDomain: 'derive-clone.firebaseapp.com',
+    storageBucket: 'derive-clone.appspot.com',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBQYFwUrYAjRihb7-K68x8vgA6_tkeJm8Y',
-    appId: '1:589324556492:android:eb555743fdd3db241c0a69',
-    messagingSenderId: '589324556492',
-    projectId: 'sameerloginproj',
-    storageBucket: 'sameerloginproj.appspot.com',
+    apiKey: 'AIzaSyBBRphSCY22Nk1Xd1n3b_fBYvTaA3VVaPQ',
+    appId: '1:1016031509323:android:2803b881c07a648d5846ce',
+    messagingSenderId: '1016031509323',
+    projectId: 'derive-clone',
+    storageBucket: 'derive-clone.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyAkTcA_5yEM3G_Y1cMhyOHrW4o4ls012Kw',
-    appId: '1:589324556492:ios:7295d89baeaf076c1c0a69',
-    messagingSenderId: '589324556492',
-    projectId: 'sameerloginproj',
-    storageBucket: 'sameerloginproj.appspot.com',
-    iosClientId: '589324556492-40vj0jmnautticqggj490ee7c0u0e8nt.apps.googleusercontent.com',
-    iosBundleId: 'com.adilayoubbhat.flutteChallange',
+    apiKey: 'AIzaSyAQuu00YU1uX6fT6NNlUEJ4iDrZ0gEPpy0',
+    appId: '1:1016031509323:ios:4547bf91a5ce9e655846ce',
+    messagingSenderId: '1016031509323',
+    projectId: 'derive-clone',
+    storageBucket: 'derive-clone.appspot.com',
+    iosClientId: '1016031509323-mt4v3slphb9c773sl7vaumoo4imn5jg7.apps.googleusercontent.com',
+    iosBundleId: 'com.example.flutterchallenge',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyAkTcA_5yEM3G_Y1cMhyOHrW4o4ls012Kw',
-    appId: '1:589324556492:ios:09988cb869c464431c0a69',
-    messagingSenderId: '589324556492',
-    projectId: 'sameerloginproj',
-    storageBucket: 'sameerloginproj.appspot.com',
-    iosClientId: '589324556492-s053i3o1nnadlg11l0fvai96nqglfr7o.apps.googleusercontent.com',
-    iosBundleId: 'com.adilayoubbhat.flutteChallange.RunnerTests',
+    apiKey: 'AIzaSyAQuu00YU1uX6fT6NNlUEJ4iDrZ0gEPpy0',
+    appId: '1:1016031509323:ios:9a933aa865213dcd5846ce',
+    messagingSenderId: '1016031509323',
+    projectId: 'derive-clone',
+    storageBucket: 'derive-clone.appspot.com',
+    iosClientId: '1016031509323-3hprm0s57neieua6mkscca9gj1dll84p.apps.googleusercontent.com',
+    iosBundleId: 'com.example.flutterchallenge.RunnerTests',
   );
 }
