@@ -1,7 +1,9 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutterchallenge/Integration%20of%20ChatGPT/lib/main.dart';
 import 'package:get/get.dart';
+
 import 'package:http/http.dart' as http;
 
 // void main() => runApp(const MyApp());
@@ -334,7 +336,6 @@ class DataModel {
   }
 }
 
- */
 
 void main() => runApp(const Asgn());
 
@@ -433,6 +434,248 @@ class ModelData {
       id: json['id'],
       userId: json['userId'],
       title: json['title'],
+    );
+  }
+}
+
+
+ */
+
+// void main() => runApp(const Api());
+
+// class Api extends StatelessWidget {
+//   const Api({super.key});
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       theme: ThemeData(
+//         useMaterial3: true,
+//       ),
+//       home: const Home(),
+//     );
+//   }
+// }
+
+// class Home extends StatefulWidget {
+//   const Home({super.key});
+
+//   @override
+//   State<Home> createState() => _HomeState();
+// }
+
+// class _HomeState extends State<Home> {
+//   late Future<List<DataModel>> title;
+//   @override
+//   void initState() {
+//     title = getData();
+//     super.initState();
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text('Api call'),
+//         centerTitle: true,
+//       ),
+//       body: Center(
+//         child: FutureBuilder<List<DataModel>>(
+//           future: title,
+//           builder: (context, snapshot) {
+//             if (snapshot.connectionState == ConnectionState.waiting) {
+//               const CircularProgressIndicator();
+//             } else if (snapshot.hasError) {
+//               return Text(snapshot.error.toString());
+//             } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+//               return const Text('No Item');
+//             }
+//             final items = snapshot.data;
+//             return ListView.builder(
+//               itemCount: items!.length,
+//               itemBuilder: (context, index) {
+//                 return ListTile(
+//                   title: Text(items[index].title),
+//                 );
+//               },
+//             );
+//           },
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// //Api function
+// Future<List<DataModel>> getData() async {
+//   //parse data first
+//   final Uri url = Uri.parse('https://jsonplaceholder.typicode.com/albums');
+//   //response
+//   final response = await http.get(url);
+//   // check the status code
+//   if (response.statusCode == 200) {
+//     final List<dynamic> jsonResponse = jsonDecode(response.body);
+//     final List<DataModel> data =
+//         jsonResponse.map((title) => DataModel.jsonDecode(title)).toList();
+//     return data;
+//   } else {
+//     throw Exception('Faild to get the data from Api');
+//   }
+// }
+
+// //Model
+
+// class DataModel {
+//   const DataModel(
+//       {required this.id, required this.userId, required this.title});
+//   final int id;
+//   final int userId;
+//   final String title;
+
+//   factory DataModel.jsonDecode(Map<String, dynamic> json) {
+//     return DataModel(
+//       id: json['id'],
+//       userId: json['userId'],
+//       title: json['title'],
+//     );
+//   }
+// }
+
+void main() => runApp(const MyApp());
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Api(),
+    );
+  }
+}
+
+class Api extends StatefulWidget {
+  const Api({super.key});
+  @override
+  State<Api> createState() => _ApiState();
+}
+
+class _ApiState extends State<Api> {
+  // url
+  final _baseUrl = 'https://jsonplaceholder.typicode.com/posts';
+  int _initialPage = 0;
+  final int _pageLimit = 10;
+  bool _nextPage = true;
+  bool _isFirstLoading = false;
+  bool _isLoading = false;
+  List _post = [];
+  late ScrollController _controller;
+  void _firstLoad() async {
+    setState(() {
+      _isFirstLoading = true;
+    });
+
+    try {
+      final response = await http
+          .get(Uri.parse("$_baseUrl?_page= $_nextPage&_limit=$_pageLimit"));
+
+      setState(() {
+        _post = jsonDecode(response.body);
+      });
+    } catch (e) {
+      throw Exception('$e');
+    }
+    setState(() {
+      _isFirstLoading = false;
+    });
+  }
+  // scroll User
+
+  void _loadMore() async {
+    if (_nextPage == true &&
+        _isLoading == false &&
+        _isFirstLoading &&
+        _controller.position.extentAfter < 300) {
+      setState(() {
+        _isLoading = true;
+      });
+      _initialPage += 1;
+    }
+    try {
+      final response = await http
+          .get(Uri.parse("$_baseUrl?_page=$_initialPage&_limit=$_pageLimit"));
+      final List fetchedPost = jsonDecode(response.body);
+      if (fetchedPost.isNotEmpty) {
+        setState(() {
+          _post.addAll(fetchedPost);
+        });
+      } else {
+        setState(() {
+          _nextPage = false;
+        });
+      }
+    } catch (e) {
+      throw Exception('$e');
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _firstLoad();
+    _controller = ScrollController()..addListener(_loadMore);
+  }
+
+  @override
+  void dispose() {
+    _controller.removeListener(_loadMore);
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Api call'),
+      ),
+      body: _isFirstLoading
+          ? const Center(
+              child: CircularProgressIndicator(),
+            )
+          : Column(children: [
+              Expanded(
+                child: ListView.builder(
+                  controller: _controller,
+                  itemCount: _post.length,
+                  itemBuilder: (_, index) => Card(
+                    margin:
+                        const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
+                    child: ListTile(
+                      title: Text(_post[index]['title']),
+                      subtitle: Text(_post[index]['body']),
+                    ),
+                  ),
+                ),
+              ),
+
+              // when the _loadMore function is running
+              if (_isLoading == true)
+                const Padding(
+                  padding: EdgeInsets.only(top: 10, bottom: 40),
+                  child: Center(
+                    child: CircularProgressIndicator(),
+                  ),
+                ),
+              // when nothing else is running
+              if (_nextPage == false)
+                Container(
+                  padding: const EdgeInsets.only(top: 30, bottom: 40),
+                  color: Colors.amber,
+                  child: const Center(
+                    child: Text('You have fetched all of the content'),
+                  ),
+                ),
+            ]),
     );
   }
 }
