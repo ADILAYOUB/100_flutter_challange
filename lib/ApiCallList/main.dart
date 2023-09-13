@@ -637,6 +637,7 @@ class _ApiState extends State<Api> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Api call'),
+        centerTitle: true,
       ),
       body: _isFirstLoading
           ? const Center(
@@ -651,7 +652,14 @@ class _ApiState extends State<Api> {
                     margin:
                         const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
                     child: ListTile(
-                      title: Text(_post[index]['title']),
+                      title: Text(
+                        _post[index]['title'],
+                        style: const TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.blue,
+                        ),
+                      ),
                       subtitle: Text(_post[index]['body']),
                     ),
                   ),
