@@ -599,7 +599,7 @@ class _ApiState extends State<Api> {
       setState(() {
         _isLoading = true;
       });
-      _initialPage += 1;
+      _initialPage++;
     }
     try {
       final response = await http
@@ -643,7 +643,7 @@ class _ApiState extends State<Api> {
           ? const Center(
               child: CircularProgressIndicator(),
             )
-          : Column(children: [
+          : Column(mainAxisAlignment: MainAxisAlignment.start, children: [
               Expanded(
                 child: ListView.builder(
                   controller: _controller,
