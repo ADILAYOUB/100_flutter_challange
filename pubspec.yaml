@@ -31,41 +31,12 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
-  provider: 
-  get: 
-  hive_flutter: 
-  http:
-  riverpod: 
-  flutter_riverpod: 
-  sqflite:
-  font_awesome_flutter: ^10.5.0
-  math_expressions: ^2.4.0
-  google_fonts: ^5.1.0
-  sizer: ^2.0.15
-  carousel_slider: ^4.2.1
-  dio: ^5.2.1+1
-  shared_preferences: ^2.2.0
-  multiple_result: ^5.0.0
-  firebase_core: ^2.14.0
-  firebase_auth: ^4.6.3
-  icony: ^1.0.5
-  iconly: ^1.0.1
-  supabase_flutter: ^1.10.9
-  flutter_dotenv: ^5.1.0
-  action_slider: ^0.6.1
-  intl: ^0.18.1
-  simple_month_year_picker: ^1.0.5
-  location: ^4.0.1
-  flutter_bloc: ^7.0.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
+ 
 
 flutter:
 
   uses-material-design: true
-
-  assets:
-    - assets/
-    - .env
