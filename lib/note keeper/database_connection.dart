@@ -13,7 +13,8 @@ class DatabaseConeection {
   }
 
   Future<void> _onCreateDatabase(Database database, int version) async {
-    await database.execute(
-        'CREATE TABLE note(id INTEGER PRIMARY KEY, title TEXT, description TEXT, contact TEXT)');
+    String sqlQuery =
+        'CREATE TABLE note(id INTEGER PRIMARY KEY, title TEXT, description TEXT, contact TEXT)';
+    await database.execute(sqlQuery);
   }
 }
